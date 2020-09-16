@@ -1,0 +1,3 @@
+<?php
+header('Location: osu://spectate'.$_SERVER['PATH_INFO'])
+?>

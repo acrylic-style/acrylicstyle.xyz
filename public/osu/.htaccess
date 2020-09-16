@@ -1,0 +1,7 @@
+<FilesMatch "spectate">
+        SetHandler application/x-httpd-php
+</FilesMatch>
+
+<FilesMatch "dl">
+        SetHandler application/x-httpd-php
+</FilesMatch>

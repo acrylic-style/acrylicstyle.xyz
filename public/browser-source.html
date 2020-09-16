@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Browser Source</title>
+    <meta charset='UTF-8'>
+    <script>
+      const sounds = {
+        followed: new Audio('https://um.acrylicstyle.xyz/162158118156/17706765/decision28.mp3'),
+      };
+      const getLoc = i => { if (i === 0) return { x: 0, y: 0 }; else if(i === 1) return { x: 6, y: 10 }; }
+      let latestID = null
+      const cname = location.hash.substr(1);
+      const task = async () => {
+        let error = '';
+        const rawresponse = await window.fetch(`https://api.acrylicstyle.xyz/v1/followers/${cname}`, { mode: 'cors' });
+        console.log(rawresponse)
+        const response = await rawresponse.json();
+        console.log(response)
+        if (response.errors) {
+          return; // don't show anything
+        }
+        const user = response['users'][0];
+        if (latestID !== user['id']) latestID = user['id']; else return;
+        const name = user['name'].length >= 22 ? `${user['name'].substr(0, 22)}...` : user['name']
+        const id = `@${user['screen_name']}`
+        const c = document.getElementById('canvas');
+        const image = new Image();
+        const profileImage = new Image();
+        const images = [image, profileImage];
+        let count = images.length;
+        image.onload = profileImage.onload = counter;
+        /** @type CanvasRenderingContext2D */
+        const ctx = c.getContext('2d');
+        ctx.globalAlpha = 0;
+        function counter() {
+          count--;
+          if (count === 0) drawImages(); // don't draw images until it's ready
+        }
+        if (cname === 'yululi_ch') {
+          images[0].src = 'https://cdn.discordapp.com/attachments/520239314270158857/618075658160963614/949f9134d3db5ead.png';
+          images[1].src = 'https://img.acrylicstyle.xyz/upload/16215811888/28513864/icon.jpg';
+        }
+        let drawed = false;
+        async function drawImages() {
+          for (i = 0; i < images.length; i++) ctx.drawImage(images[i], getLoc(i)['x'], getLoc(i)['y']);
+          ctx.font = '15px Verdana';
+          ctx.fillStyle = '#FFFFFF'; // white
+          ctx.fillText(name, 60, 20);
+          ctx.fillStyle = '#808080'; // gray
+          ctx.font = '13px Verdana';
+          ctx.fillText(id, 60, 35);
+          ctx.fillStyle = '#58B9FF'; // aqua
+          ctx.font = '18px Verdana';
+          ctx.fillText(`@${cname}`, 60, 65); // aqua just like link
+          ctx.fillStyle = '#FFFFFF'; // white
+          ctx.fillText('をフォローしました！', 160, 65);
+          ctx.font = '18px Verdana';
+          ctx.fillStyle = '#FF0000'; // red
+          ctx.fillText(error, 60, 65);
+          if (drawed) return;
+          const fadeIn = setInterval(() => {
+            console.log(ctx.globalAlpha)
+            ctx.globalAlpha = Math.round((ctx.globalAlpha+0.1)*10)/10; // 0 -> 0.1 -> 0.2 -> ... -> 1
+            drawImages();
+            if (ctx.globalAlpha >= 1) clearInterval(fadeIn)
+          }, 100) // 100ms, 0.1 seconds
+          setTimeout(() => {
+            const fadeOut = setInterval(() => { // this method may be fucked
+              console.log(ctx.globalAlpha)
+              ctx.globalAlpha = Math.round((ctx.globalAlpha-0.1)*10)/10; // 1 -> 0.9 -> 0.8 -> ... -> 0
+              drawImages();
+              if (ctx.globalAlpha <= 0) {
+                clearInterval(fadeOut)
+                ctx.globalAlpha = 0;
+                ctx.clearRect(0, 0, c.width, c.height)
+              }
+            }, 100) // 100ms, 0.1 seconds
+          }, 1000*10) // 10 seconds
+          sounds.followed.volume = 0.35;
+          await sounds.followed.play();
+          drawed = true;
+        }
+      }
+      setInterval(task, 1000*60); // check every 60 seconds
+      task();
+    </script>
+  </head>
+  <body>
+    <div id='overlay'>
+      <canvas id='canvas' width='346' height='115'></canvas>
+    </div>
+  </body>
+</html>

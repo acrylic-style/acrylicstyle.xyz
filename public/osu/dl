@@ -1,0 +1,3 @@
+<?php // todo: do i really need php?
+header('Location: osu://dl'.$_SERVER['PATH_INFO'])
+?>

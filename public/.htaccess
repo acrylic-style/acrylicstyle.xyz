@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteRule ^(.*\.git.*)$ https://github.com/acrylic-style/$1 [R=301]
+Header set Access-Control-Allow-Origin "*"
