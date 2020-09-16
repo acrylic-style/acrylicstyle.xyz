@@ -1,0 +1,76 @@
+.light-font {
+  font-family: 'Roboto';
+}
+
+.heavy-font {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 64px;
+}
+
+a, a:link, a:visited {
+  position: relative;
+  text-decoration: none;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
+  transition-duration: 300ms;
+}
+
+a:hover,
+a:active {
+  color: rgba(255, 255, 255, 0.88);
+  transition-duration: 300ms;
+}
+
+a:hover {
+  width: 100%;
+}
+
+a {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.88);
+  width: 0%;
+  float: inherit;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  display: block;
+}
+
+.center {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  color: rgba(255, 255, 255, 0.9);
+  background-image: url('https://img.acrylicstyle.xyz/upload/13916272196/1061035042/2020-09-17_01.55.47.png');
+  background-size: auto;
+  background-position-x: center;
+}
+
+.links {
+  display: inline-block;
+}
+
+li {
+  font-family: 'Roboto';
+  display: inline-block;
+  padding: 8px;
+  font-size: 24px
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
+  white-space: nowrap;
+}
