@@ -1,9 +1,15 @@
-snowStorm.followMouse = false;
-snowStorm.freezeOnBlur = false;
-snowStorm.snowStick = false;
-snowStorm.vMaxY = 6;
-snowStorm.vMaxX = 4;
-snowStorm.flakesMaxActive = 72;
+let interval = 0
+interval = setInterval(() => {
+  if (snowStorm) {
+    snowStorm.followMouse = false;
+    snowStorm.freezeOnBlur = false;
+    snowStorm.snowStick = false;
+    snowStorm.vMaxY = 6;
+    snowStorm.vMaxX = 4;
+    snowStorm.flakesMaxActive = 72;
+    clearInterval(interval)
+  }
+});
 function registerUrl(id, url) {
   try {
     document.getElementById(id).onclick = () => openUrl(url);
