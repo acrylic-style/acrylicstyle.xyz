@@ -35,7 +35,7 @@ async function toggleVideo(newState) {
     videoEnabled = false;
     localStorage.setItem('videoEnabled', 'false');
     const result = await Swal.fire({
-      title: 'Are you sure want to enable video? (It takes ~50MB!)',
+      title: 'Are you sure want to download nice video? (It takes ~50MB!)',
       showCancelButton: true,
       confirmButtonText: 'Yes',
       cancelButtonText: 'No',
