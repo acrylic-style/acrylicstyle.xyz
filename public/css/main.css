@@ -23,7 +23,7 @@ a {
 
 a:hover,
 a:active {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   transition-duration: 300ms;
 }
 
@@ -33,7 +33,7 @@ a:hover {
 }
 
 .underline {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.88);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.92);
   width: 0%;
   float: inherit;
   -webkit-transition: all 0.2s ease-out;
