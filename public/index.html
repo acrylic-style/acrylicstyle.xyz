@@ -13,15 +13,19 @@
     <script src="js/snowstorm-min.js" type="text/javascript"></script>
   </head>
   <body>
+    <video muted loop id="video" class="disabled hidden"></video>
+    <div style="width: 25px;">
+      <a onclick="toggleVideo()"><i id="movieIcon" class="material-icons">play_arrow</i></a>
+    </div>
     <div class="center">
       <div class="center heavy-font" style="top: 37%; white-space: nowrap;">
         <h1 style="font-size: 64px">Acrylic Style</h1>
         <div class="center light-font" style="top: 120px;">Kotlin Developer</div>
         <div class="links center" style="top: 80px; left: -1px; width: 99%;">
           <ul>
-            <li><a id="osu">osu!</a></li>
-            <li><a id="github">GitHub</a></li>
-            <li><a id="twitter">Twitter</a></li>
+            <li><a class="underline" id="osu">osu!</a></li>
+            <li><a class="underline" id="github">GitHub</a></li>
+            <li><a class="underline" id="twitter">Twitter</a></li>
           </ul>
         </div>
       </div>
