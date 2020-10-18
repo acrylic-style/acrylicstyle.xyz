@@ -30,7 +30,7 @@ const addElement = data => {
     e.preventDefault();
     const cmenu = document.createElement('span')
     cmenu.classList.add("cmenu")
-    cmenu.setAttribute('style', `left: ${e.clientX - 50}px; top: ${e.clientY - 15}px;`)
+    cmenu.setAttribute('style', `left: ${e.clientX - 50}px; top: ${e.pageY - 15}px;`)
     cmenu.onmouseleave = () => cmenu.remove()
     cmenu.appendChild(createMenu('Commits', () => openUrl(`${data.html_url}/commits`)))
     cmenu.appendChild(createMenu('Issues List', () => openUrl(`${data.html_url}/issues`)))
