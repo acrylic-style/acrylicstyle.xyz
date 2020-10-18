@@ -1,6 +1,6 @@
 let interval = 0
 interval = setInterval(() => {
-  if (snowStorm) {
+  if (typeof snowStorm !== "undefined") {
     snowStorm.followMouse = false;
     snowStorm.freezeOnBlur = false;
     snowStorm.snowStick = false;
@@ -14,7 +14,7 @@ function registerUrl(id, url) {
   try {
     document.getElementById(id).onclick = () => openUrl(url);
   } catch (e) {
-    console.error(`Could not register URL(ID: ${id}, URL: ${url}): ${e.stack || e}`);
+    console.warn(`Could not register URL(ID: ${id}, URL: ${url}): ${e.stack || e}`);
   }
 }
 function openUrl(url) {
@@ -54,16 +54,16 @@ async function toggleVideo(newState) {
   if (!confirmed) return;
   if (typeof(newState) !== 'undefined') videoEnabled = !newState
   if (videoEnabled) {
-    document.getElementById('video').pause()
-    document.getElementById('video').classList.add('hidden')
-    document.getElementById('movieIcon').textContent = 'play_arrow'
+    document.getElementById('video').pause();
+    document.getElementById('video').classList.add('hidden');
+    document.getElementById('movieIcon').textContent = 'play_arrow';
     videoEnabled = false;
     localStorage.setItem('videoEnabled', 'false');
   } else {
-    document.getElementById('video').classList.remove('hidden')
-    document.getElementById('video').setAttribute('src', 'images/background/night.mp4')
-    document.getElementById('video').play()
-    document.getElementById('movieIcon').textContent = 'pause'
+    document.getElementById('video').classList.remove('hidden');
+    document.getElementById('video').setAttribute('src', 'images/background/night.mp4');
+    document.getElementById('video').play();
+    document.getElementById('movieIcon').textContent = 'pause';
     videoEnabled = true;
     localStorage.setItem('videoEnabled', 'true');
   }

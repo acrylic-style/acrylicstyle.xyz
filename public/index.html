@@ -10,26 +10,75 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="icon" href="/images/large_bread.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10" async="true"></script>
-    <script src="js/snowstorm-min.js" type="text/javascript" async="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core" async="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/prefetch" async="true"></script>
+    <script type="text/javascript" src="js/anime.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/barba.js" async="true"></script>
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CIntersectionObserver"></script>
   </head>
-  <body>
-    <video muted loop id="video" class="disabled hidden"></video>
-    <div style="width: 25px;">
-      <a onclick="toggleVideo()"><i id="movieIcon" class="material-icons">play_arrow</i></a>
-    </div>
-    <div class="center">
-      <div class="center heavy-font" style="top: 37%; white-space: nowrap;">
-        <h1 style="font-size: 64px">Acrylic Style</h1>
-        <div class="center light-font" style="top: 120px;">Kotlin Developer</div>
-        <div class="links center" style="top: 80px; left: -1px; width: 99%;">
-          <ul>
-            <li><a class="underline" id="osu">osu!</a></li>
-            <li><a class="underline" id="github">GitHub</a></li>
-            <li><a class="underline" id="twitter">Twitter</a></li>
-          </ul>
+  <body data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="main">
+      <style type="text/css">
+        a, a:link, a:visited {
+          position: relative;
+          text-decoration: none;
+        }
+        
+        a {
+          position: relative;
+          display: inline-block;
+          color: rgba(255, 255, 255, 0.6);
+          transition-duration: 300ms;
+        }
+        
+        a:hover,
+        a:active {
+          color: rgba(255, 255, 255, 0.92);
+          transition-duration: 300ms;
+        }
+        
+        a:hover {
+          width: 100%;
+          cursor: pointer;
+        }
+
+        body {
+          overflow-x: hidden;
+          overflow-y: hidden;
+          color: rgba(255, 255, 255, 0.9);
+          background: url('https://next.acrylicstyle.xyz/images/background/night_moon.webp');
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          background-position-x: center;
+          -o-background-position-x: center;
+          -moz-background-position-x: center;
+          background-size: auto;
+          -o-background-size: auto;
+          -moz-background-size: auto;
+          -webkit-background-size: auto;
+        }
+      </style>
+      <script src="js/snowstorm-min.js" type="text/javascript" async="true"></script>
+      <video muted loop id="video" class="disabled hidden"></video>
+      <div style="width: 25px;">
+        <a onclick="toggleVideo()"><i id="movieIcon" class="material-icons">play_arrow</i></a>
+      </div>
+      <div class="center">
+        <div class="center heavy-font" style="top: 37%; white-space: nowrap;">
+          <h1 style="font-size: 64px">Acrylic Style</h1>
+          <div class="center light-font" style="top: 120px;">Kotlin Developer</div>
+          <div class="links center" style="top: 80px; left: -1px; width: 99%;">
+            <ul>
+              <li><a class="underline" id="osu">osu!</a></li>
+              <li><a class="underline" id="github">GitHub</a></li>
+              <li><a class="underline" id="twitter">Twitter</a></li>
+              <li><a class="underline" href="repos.html">Open Source</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
+    <script type="text/javascript" src="js/repos.js"></script>
     <script type="text/javascript" src="js/main.js" async="true"></script>
   </body>
 </html>
