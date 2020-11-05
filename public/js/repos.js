@@ -17,6 +17,7 @@ const addElement = data => {
   const repo = document.createElement('a')
   repo.classList.add('repo')
   if (data.archived) repo.classList.add('repo-gray')
+  if (data.private) repo.classList.add('repo-private')
   repo.href = data.html_url
   const details = document.createElement('p')
   details.classList.add('details')
