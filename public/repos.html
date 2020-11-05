@@ -19,6 +19,10 @@
   <body data-barba="wrapper">
     <main data-barba="container" data-barba-namespace="repos">
       <style type="text/css">
+        .repo {
+          filter: opacity(0.95);
+        }
+
         .repo:focus, .repo:hover {
           /*z-index: 1337;*/
           border-color: #7700ff;
@@ -170,7 +174,6 @@
           flex-grow: 1;
           text-decoration: none;
           outline: none;
-          filter: opacity(0.95);
         }
 
         .repo-wrapper {

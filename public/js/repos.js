@@ -23,7 +23,7 @@ const addElement = data => {
   details.classList.add('details')
   const name = document.createElement('span')
   name.classList.add('name')
-  name.textContent = data.name
+  name.textContent = data.owner.login === 'acrylic-style' ? data.name : `${data.full_name}`
   const menu = document.createElement('span')
   menu.classList.add('menu')
   menu.textContent = '...'
@@ -147,7 +147,7 @@ const refreshRepoList = async () => {
   //repoList.sort((a, b) => )
   while (repos.firstChild) repos.removeChild(repos.lastChild)
   repoClone.forEach((repo, i) => {
-    text.textContent = `Listing ${i+1} public${options.hidePrivate ? '+private': ''} repositories. ${options.hideArchived ? '(Archived repositories are excluded)' : '(Including archived repositories)'}`
+    text.textContent = `Listing ${i+1} public${options.hidePrivate ? '+private': ''}${options.hideOrg ? '+organizations' : ''} repositories. ${options.hideArchived ? '(Archived repositories are excluded)' : '(Including archived repositories)'}`
     addElement(repo)
   })
 }
