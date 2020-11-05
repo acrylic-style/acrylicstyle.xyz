@@ -218,6 +218,7 @@
           <div>
             <p id="load">Loading... (0 repos loaded)</p>
             <label><input type="checkbox" id="hideArchived" onclick='refreshRepoList()' checked>Hide Archived</input></label><br />
+            <label><input type="checkbox" id="hidePrivate" onclick='refreshRepoList()' checked>Hide Private</input></label><br />
             <a onclick="toggleSortBox()" class="pointer toggle-closed" id="sortToggle">Sort by</a>
             <div id="sortBox" class="box hidden">
               <label><input type="radio" name="sort" value="name_a-z" onchange="refreshRepoList()" checked>Name (A-Z)</input></label><br />

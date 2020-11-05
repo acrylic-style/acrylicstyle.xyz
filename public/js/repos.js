@@ -108,8 +108,10 @@ const fetchRepos = async () => {
 }
 const getOptions = () => {
   const hideArchived = document.getElementById('hideArchived').checked
+  const hidePrivate = document.getElementById('hidePrivate').checked
   return {
     hideArchived,
+    hidePrivate,
   }
 }
 const refreshRepoList = async () => {
@@ -119,7 +121,7 @@ const refreshRepoList = async () => {
   if (repoList.length === 0) await fetchRepos()
   const repoClone = []
   repoList.forEach(repo => {
-    if (!options.hideArchived || !repo.archived) {
+    if ((!options.hideArchived || !repo.archived) && (!options.hidePrivate || !repo.private)) {
       repoClone.push(repo)
     }
   })
@@ -143,7 +145,7 @@ const refreshRepoList = async () => {
   //repoList.sort((a, b) => )
   while (repos.firstChild) repos.removeChild(repos.lastChild)
   repoClone.forEach((repo, i) => {
-    text.textContent = `Listing ${i+1} public repositories. ${options.hideArchived ? '(Archived repositories are excluded)' : '(Including archived repositories)'}`
+    text.textContent = `Listing ${i+1} public${options.hidePrivate ? '+private': ''} repositories. ${options.hideArchived ? '(Archived repositories are excluded)' : '(Including archived repositories)'}`
     addElement(repo)
   })
 }
