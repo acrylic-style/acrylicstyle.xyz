@@ -109,9 +109,11 @@ const fetchRepos = async () => {
 const getOptions = () => {
   const hideArchived = document.getElementById('hideArchived').checked
   const hidePrivate = document.getElementById('hidePrivate').checked
+  const hideOrg = document.getElementById('hideOrg').checked
   return {
     hideArchived,
     hidePrivate,
+    hideOrg,
   }
 }
 const refreshRepoList = async () => {
@@ -121,7 +123,7 @@ const refreshRepoList = async () => {
   if (repoList.length === 0) await fetchRepos()
   const repoClone = []
   repoList.forEach(repo => {
-    if ((!options.hideArchived || !repo.archived) && (!options.hidePrivate || !repo.private)) {
+    if ((!options.hideArchived || !repo.archived) && (!options.hidePrivate || !repo.private) && (!options.hideOrg || repo.owner.login === 'acrylic-style')) {
       repoClone.push(repo)
     }
   })
