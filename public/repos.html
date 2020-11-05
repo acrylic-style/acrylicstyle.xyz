@@ -24,10 +24,6 @@
           border-color: #7700ff;
           box-shadow: 0 0 30px 0 rgba(119, 0, 255, 0.4);
         }
-
-        .repo {
-          filter: opacity(0.95);
-        }
   
         .repo:focus .name, .repo:hover .name {
           color: #fff;
@@ -42,12 +38,7 @@
           filter: opacity(0.8);
         }
 
-        .repo-private {
-          background-color: #fff90c;
-        }
-
         .repo-private:focus, .repo-private:hover {
-          /*z-index: 1337;*/
           border-color: #fff90c;
           box-shadow: 0 0 30px 0 rgba(255, 249, 12, 0.4);
         }
@@ -179,6 +170,7 @@
           flex-grow: 1;
           text-decoration: none;
           outline: none;
+          filter: opacity(0.95);
         }
 
         .repo-wrapper {
@@ -209,6 +201,10 @@
           padding-left: 5px;
           text-align: left;
           cursor: pointer;
+        }
+
+        .repo-private {
+          background-color: #646303;
         }
       </style>
       <script src="js/snowstorm-min.js" type="text/javascript" async="true"></script>
