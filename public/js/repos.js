@@ -108,7 +108,7 @@ const fetchRepos = async () => {
 }
 const getOptions = () => {
   const hideArchived = document.getElementById('hideArchived').checked
-  const hidePrivate = document.getElementById('hidePublic').checked
+  const hidePublic = document.getElementById('hidePublic').checked
   const hidePrivate = document.getElementById('hidePrivate').checked
   const hideOrg = document.getElementById('hideOrg').checked
   return {
