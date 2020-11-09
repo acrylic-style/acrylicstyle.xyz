@@ -4,12 +4,19 @@ interval = setInterval(() => {
     snowStorm.followMouse = false;
     snowStorm.freezeOnBlur = false;
     snowStorm.snowStick = false;
-    snowStorm.vMaxY = 3; // 6
-    snowStorm.vMaxX = 3; // 4
-    // season specific settings
+    // default
+    snowStorm.vMaxY = 6;
+    snowStorm.vMaxX = 4;
+    snowStorm.flakesMaxActive = 72;
+    // season specifics
+    // halloween
+    /*
+    snowStorm.vMaxY = 3;
+    snowStorm.vMaxX = 3;
     snowStorm.flakesMax = 64;
     snowStorm.snowCharacter = '🎃'
     snowStorm.animationInterval = 100;
+    */
     clearInterval(interval)
   }
 });
