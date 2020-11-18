@@ -20,7 +20,8 @@ interval = setInterval(() => {
     clearInterval(interval)
   }
 });
-// also season specific
+// also season specific (used in halloween)
+/*
 setInterval(() => {
   document.querySelectorAll("body>div").forEach(el => {
     el.style['font-size'] = '12px'
@@ -29,6 +30,7 @@ setInterval(() => {
     el.style['height'] = '22px'
   })
 })
+*/
 function registerUrl(id, url) {
   try {
     document.getElementById(id).onclick = () => openUrl(url);
