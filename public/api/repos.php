@@ -1,11 +1,10 @@
 <?php
 $config = require_once('./config.php');
-$fp = fopen('./data.json', 'r+');
 $size = filesize('./data.json');
 if ($size === 0) {
   $contents = '{}';
 } else {
-  $contents = fread($fp, $size);
+  $contents = file_get_contents('./data.json');
 }
 $data = json_decode($contents);
 $token = $config['GH_ACCESS_TOKEN'];
@@ -28,6 +27,5 @@ $pd = [
   'expiresAt' => time() + 1800, // 30 minutes
 ];
 $data->{$page} = $pd;
-fwrite($fp, json_encode($data));
-fclose($fp);
+file_put_contents('./data.json', json_encode($data));
 echo $out;
