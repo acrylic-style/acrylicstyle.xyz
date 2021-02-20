@@ -94,7 +94,7 @@ const fetchRepos = async () => {
   let repos = 0
   while (true) {
     if (index === -1) return;
-    await fetch(`https://repo.acrylicstyle.xyz/api/repos.php?page=${++index}`).then(res => res.json()).then(data => {
+    await fetch(`https://next.acrylicstyle.xyz/api/repos.php?page=${++index}`).then(res => res.json()).then(data => {
       if (data.length === 0) {
         index = -1
         text.textContent = `Listing ${repos} public repositories.`
