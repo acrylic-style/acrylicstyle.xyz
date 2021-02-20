@@ -86,16 +86,19 @@ const addElement = data => {
   repos.appendChild(repo)
 }
 const repoList = []
+let fetching = false
 const fetchRepos = async () => {
+  fetching = true
   const text = document.getElementById('load')
   let index = 0
   let repos = 0
   while (true) {
-    if (index === -1) break;
-    await fetch(`/api/repos.php?page=${++index}`).then(res => res.json()).then(data => {
+    if (index === -1) return;
+    await fetch(`https://repo.acrylicstyle.xyz/api/repos.php?page=${++index}`).then(res => res.json()).then(data => {
       if (data.length === 0) {
         index = -1
         text.textContent = `Listing ${repos} public repositories.`
+        fetching = false
         return
       }
       repos += data.length
@@ -119,6 +122,7 @@ const getOptions = () => {
   }
 }
 const refreshRepoList = async () => {
+  if (fetching) return;
   repos = document.getElementById('repos')
   const options = getOptions()
   const text = document.getElementById('load')
