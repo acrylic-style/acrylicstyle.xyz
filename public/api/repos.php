@@ -10,7 +10,8 @@ $data = json_decode($contents);
 $token = $config['GH_ACCESS_TOKEN'];
 $page = $_GET['page'] ?: 1;
 header("Content-Type: application/json");
-if (!empty($data->{$page}) && !empty($data->{$page}->{'data'}) && $data->{$page}->{'expiresAt'} < time()) {
+if (!empty($data->{$page}) && !empty($data->{$page}->{'data'}) && $data->{$page}->{'expiresAt'} > time()) {
+  echo $exp;
   echo $data->{$page}->{'data'};
   return;
 }
