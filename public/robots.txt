@@ -1,5 +1,4 @@
 User-Agent: *
 Disallow: /osu/*
-Disallow: /browser-source.html
 Disallow: /googleacadc8ff6cbccd42.html
 Disallow: /abuseipdb-verirication.html
