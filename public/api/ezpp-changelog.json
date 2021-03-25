@@ -48,7 +48,8 @@
         {
           "category": "User Interface",
           "message": "Add setting to use original song metadata",
-          "author": "acrylic-style"
+          "author": "acrylic-style",
+          "major": true
         },
         {
           "category": "Translation",
@@ -73,7 +74,8 @@
         {
           "category": "Gamemode",
           "message": "Add Taiko support",
-          "author": "acrylic-style"
+          "author": "acrylic-style",
+          "major": true
         },
         {
           "category": "Translation",
@@ -98,7 +100,8 @@
         {
           "category": "User Interface",
           "message": "Display AR",
-          "author": "acrylic-style"
+          "author": "acrylic-style",
+          "major": true
         },
         {
           "category": "User Interface",
@@ -128,7 +131,8 @@
         {
           "category": "User Interface",
           "message": "Display BPM",
-          "author": "oamaok"
+          "author": "oamaok",
+          "major": true
         },
         {
           "category": "Misc",
@@ -173,7 +177,8 @@
         {
           "category": "User Interface",
           "message": "Add darkmode",
-          "author": "oamaok"
+          "author": "oamaok",
+          "major": true
         },
         {
           "category": "Translation",
@@ -368,7 +373,8 @@
         {
           "category": "User Interface",
           "message": "Display star difficulty",
-          "author": "oamaok"
+          "author": "oamaok",
+          "major": true
         },
         {
           "category": "User Interface",
