@@ -18,10 +18,10 @@ const getOrLatest = data => {
   const href = location.href.split('#')
   if (href.length < 2) {
     let index = 0
-    return { ...data.entries.reverse().filter((e, i) => {
+    return { ...data.entries.find((e, i) => {
       index = i
       return !e.pre
-    })[0], index }
+    }), index }
   }
   const version = href[1]
   let index = 0
