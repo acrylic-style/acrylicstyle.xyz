@@ -18,6 +18,7 @@ const getOrLatest = data => {
   const href = location.href.split('#')
   let index = 0
   const fallback = { ...data.entries.find((e, i) => {
+    if (typeof e.version === 'undefined') console.error('Version not defined for ' + e)
     index = i
     return !e.pre
   }), index }
@@ -73,7 +74,7 @@ const process = data_ => {
     if (!data) throw new Error('data not defined')
   }
   current = getOrLatest(data)
-  console.log('Current version:', current)
+  console.log('Current version:', { ...current, previous: data.entries[current.index + 1], next: data.entries[current.index - 1] })
   replaceBuildVersionElements()
   replaceChangelogEntries()
 }
