@@ -101,6 +101,7 @@
           "category": "User Interface",
           "message": "Display AR",
           "author": "acrylic-style",
+          "type": "add",
           "major": true
         },
         {
@@ -132,6 +133,7 @@
           "category": "User Interface",
           "message": "Display BPM",
           "author": "oamaok",
+          "type": "add",
           "major": true
         },
         {
@@ -374,6 +376,7 @@
           "category": "User Interface",
           "message": "Display star difficulty",
           "author": "oamaok",
+          "type": "add",
           "major": true
         },
         {
