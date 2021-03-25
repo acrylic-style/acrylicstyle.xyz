@@ -16,20 +16,19 @@ const iconChevronLeftElement = document.getElementById('fa-chevron-left')
  */
 const getOrLatest = data => {
   const href = location.href.split('#')
-  if (href.length < 2) {
-    let index = 0
-    return { ...data.entries.find((e, i) => {
-      index = i
-      return !e.pre
-    }), index }
-  }
-  const version = href[1]
   let index = 0
+  const fallback = { ...data.entries.find((e, i) => {
+    index = i
+    return !e.pre
+  }), index }
+  if (href.length < 2) return fallback
+  const version = href[1]
+  index = 0
   const result = data.entries.find((e, i) => {
     index = i
     return e.version === version
   })
-  return result ? { ...result, index } : { ...data.entries[0], index: 0 }
+  return result ? { ...result, index } : fallback
 }
 
 /**
