@@ -191,7 +191,7 @@ const replaceChangelogEntries = () => {
       iconElement = iconElement.cloneNode(true)
       iconElement.classList.add('changelog-entry-icon')
       const messageElement = document.createElement('span')
-      messageElement.innerHTML = entry.message
+      messageElement.innerHTML = processMessage(entry.message)
       const userElement = document.createElement('span')
       userElement.classList.add('changelog-entry-user')
       const byElement = document.createElement('span')
@@ -214,6 +214,24 @@ const replaceChangelogEntries = () => {
     container.appendChild(entriesElement)
     buildsItemElement.appendChild(container)
   })
+}
+
+const ISSUE_REGEX = /([a-zA-Z0-9\-_]+?)#(\d+)/g
+const ISSUE_EXPANDED_REGEX = /([a-zA-Z0-9\-_]+?)\/([a-zA-Z0-9\-_]+?)#(\d+)/g
+const MD_URL_REGEX = /\[(.*?)\]\((.*?)\)/g
+
+const processMessage = message => {
+  if (ISSUE_REGEX.test(message)) {
+    if (ISSUE_EXPANDED_REGEX.test(message)) {
+      message = message.replace(ISSUE_EXPANDED_REGEX, '<a href="https://github.com/$1/$2/pull/$3">$&</a>')
+    } else {
+      message = message.replace(ISSUE_REGEX, '<a href="https://github.com/oamaok/$1/pull/$2">$&</a>')
+    }
+  }
+  if (MD_URL_REGEX.test(message)) {
+    message = message.replace(MD_URL_REGEX, '<a href="$2">$1</a>')
+  }
+  return message
 }
 
 /**

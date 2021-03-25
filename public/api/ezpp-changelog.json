@@ -6,22 +6,17 @@
       "entries": [
         {
           "category": "Code Quality",
-          "message": "Migrate to TypeScript",
+          "message": "Migrate to TypeScript (ezpp#95)",
           "author": "acrylic-style"
         },
         {
           "category": "Code Quality",
-          "message": "Removed babel, and everything is typescript now",
-          "author": "acrylic-style"
-        },
-        {
-          "category": "Code Quality",
-          "message": "Add .gitattributes",
+          "message": "Add .gitattributes (ezpp#97)",
           "author": "acrylic-style"
         },
         {
           "category": "Gamemode",
-          "message": "Full taiko support (<b>only for non-conversion maps</b>)",
+          "message": "Full taiko support (<b>only for non-conversion maps</b>) (ezpp#93)",
           "author": "acrylic-style",
           "major": true
         }
@@ -32,7 +27,7 @@
       "entries": [
         {
           "category": "User Interface",
-          "message": "Fix a bug which caused all the text to disappear in some cases",
+          "message": "Fix a bug which caused all the text to disappear in some cases (ezpp#92)",
           "author": "oamaok"
         }
       ]
@@ -42,28 +37,28 @@
       "entries": [
         {
           "category": "User Interface",
-          "message": "Fix AR calculations",
+          "message": "Fix AR calculations (ezpp#76)",
           "author": "acrylic-style"
         },
         {
           "category": "User Interface",
-          "message": "Add setting to use original song metadata",
+          "message": "Add setting to use original song metadata (ezpp#82)",
           "author": "acrylic-style",
           "major": true
         },
         {
           "category": "Translation",
-          "message": "Fix Swedish translation file encoding",
+          "message": "Fix Swedish translation file encoding (ezpp#78)",
           "author": "Walavouchey"
         },
         {
           "category": "Code Quality",
-          "message": "Refactor settings system",
+          "message": "Refactor settings system (ezpp#83)",
           "author": "oamaok"
         },
         {
           "category": "Misc",
-          "message": "Remove local changelog, use GitHub link instead",
+          "message": "Remove local changelog (ezpp#80)",
           "author": "oamaok"
         }
       ]
@@ -73,23 +68,23 @@
       "entries": [
         {
           "category": "Gamemode",
-          "message": "Add Taiko support",
+          "message": "Add Taiko support (ezpp#70)",
           "author": "acrylic-style",
           "major": true
         },
         {
           "category": "Translation",
-          "message": "Add Swedish translations",
+          "message": "Add Swedish translations (ezpp#69)",
           "author": "Walavouchey"
         },
         {
           "category": "Code Quality",
-          "message": "Calculator code refactoring",
+          "message": "Calculator code refactoring ([a6907be](https://github.com/oamaok/ezpp/commit/a6907befd762b519b98c62564aebff5eac8659c0))",
           "author": "oamaok"
         },
         {
           "category": "Misc",
-          "message": "Minor stylistic improvements",
+          "message": "Minor stylistic improvements (ezpp#73)",
           "author": "oamaok"
         }
       ]
@@ -99,29 +94,29 @@
       "entries": [
         {
           "category": "User Interface",
-          "message": "Display AR",
+          "message": "Display AR (ezpp#50)",
           "author": "acrylic-style",
           "type": "add",
           "major": true
         },
         {
           "category": "User Interface",
-          "message": "Fix BPM display for HT",
+          "message": "Fix BPM display for HT (ezpp#60)",
           "author": "acrylic-style"
         },
         {
           "category": "Translation",
-          "message": "Add Hungarian translations",
+          "message": "Add Hungarian translations (ezpp#59)",
           "author": "Tudi20"
         },
         {
           "category": "Translation",
-          "message": "Add Turkish translations",
+          "message": "Add Turkish translations (ezpp#58)",
           "author": "EmirhaN998"
         },
         {
           "category": "pp Calculation",
-          "message": "Update pp calculation package <a href=\"https://github.com/Francesco149/ojsama\">ojsama</a>",
+          "message": "Update pp calculation package [ojsama](https://github.com/Francesco149/ojsama) (ezpp#57)",
           "author": "hesch"
         }
       ]
@@ -158,12 +153,12 @@
       "entries": [
         {
           "category": "Translation",
-          "message": "Update Japanese translations",
+          "message": "Update Japanese translations (ezpp#43)",
           "author": "sjcl"
         },
         {
           "category": "Translation",
-          "message": "Update Spanish translations",
+          "message": "Update Spanish translations (ezpp#44)",
           "author": "loarca"
         },
         {
@@ -184,7 +179,7 @@
         },
         {
           "category": "Translation",
-          "message": "Add Korean translations",
+          "message": "Add Korean translations (ezpp#42)",
           "author": "pine5508"
         }
       ]
@@ -199,7 +194,7 @@
         },
         {
           "category": "Translation",
-          "message": "Add Simplified Chinese translations",
+          "message": "Add Simplified Chinese translations (ezpp#41)",
           "author": "TsukiPoi"
         }
       ]
@@ -214,7 +209,7 @@
         },
         {
           "category": "Translation",
-          "message": "Add Brazilian Portuguese translations",
+          "message": "Add Brazilian Portuguese translations (ezpp#40)",
           "author": "ekisu"
         }
       ]
@@ -229,12 +224,12 @@
         },
         {
           "category": "Translation",
-          "message": "Add Traditional Chinese translations",
+          "message": "Add Traditional Chinese translations (ezpp#36)",
           "author": "tomokarin"
         },
         {
           "category": "Translation",
-          "message": "Add Italian translations",
+          "message": "Add Italian translations (ezpp#38)",
           "author": "Frank1907"
         }
       ]
@@ -289,12 +284,12 @@
       "entries": [
         {
           "category": "Translation",
-          "message": "Add Japanese translation",
+          "message": "Add Japanese translation (ezpp#33)",
           "author": "sjcl"
         },
         {
           "category": "Translation",
-          "message": "Add Vietnamase translation",
+          "message": "Add Vietnamase translation (ezpp#31)",
           "author": "natsukagami"
         },
         {
@@ -369,7 +364,7 @@
       "entries": [
         {
           "category": "Translation",
-          "message": "Add Polish translation",
+          "message": "Add Polish translation (ezpp#28)",
           "author": "Desconocidosmh"
         },
         {
@@ -431,12 +426,12 @@
       "entries": [
         {
           "category": "Translation",
-          "message": "Add Romanian translation",
+          "message": "Add Romanian translation (ezpp#26)",
           "author": "NoireHime"
         },
         {
           "category": "Translation",
-          "message": "Add French translation",
+          "message": "Add French translation (ezpp#27)",
           "author": "xZoomy"
         },
         {
@@ -456,17 +451,17 @@
       "entries": [
         {
           "category": "Translation",
-          "message": "Add Russian translation",
+          "message": "Add Russian translation (ezpp#25)",
           "author": "pazzaru"
         },
         {
           "category": "Translation",
-          "message": "Add Slovakian translation",
+          "message": "Add Slovakian translation (ezpp#23)",
           "author": "Thymue"
         },
         {
           "category": "Reliability",
-          "message": "Update <a href=\"https://github.com/Francesco149/ojsama\">ojsama</a> to fix rare calculation error",
+          "message": "Update [ojsama](https://github.com/Francesco149/ojsama) to fix rare calculation error",
           "author": "oamaok"
         }
       ]
@@ -567,7 +562,12 @@
         },
         {
           "category": "Translation",
-          "message": "Add translations (fi, en, de, es)",
+          "message": "Add Spanish translation (ezpp#21)",
+          "author": "DJNeonNight"
+        },
+        {
+          "category": "Translation",
+          "message": "Add translations (fi, en, de)",
           "author": "oamaok"
         },
         {
