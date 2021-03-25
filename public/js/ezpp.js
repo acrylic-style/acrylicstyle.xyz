@@ -38,10 +38,11 @@ const getOrLatest = data => {
  *     entries: [
  *       {
  *         category: string
- *         type: 'fix' | 'add' | 'remove' | 'auto'
+ *         type?: 'fix' | 'add' | 'remove' | 'auto'
  *         message: string
- *         author: string
- *         major: boolean
+ *         author?: string
+ *         major?: boolean
+ *         description?: Array<string>
  *       }
  *     ]
  *     pre: boolean
@@ -164,6 +165,7 @@ const replaceChangelogEntries = () => {
     current.entries.filter(e => e.category === categoryName).forEach(entry => {
       const entryElement = document.createElement('div')
       entryElement.classList.add('changelog-entry')
+
       const entryRowElement = document.createElement('div')
       entryRowElement.classList.add('changelog-entry-row')
       if (entry.major) entryRowElement.classList.add('changelog-entry-major')
@@ -201,6 +203,19 @@ const replaceChangelogEntries = () => {
       if (!entry.author.includes(',')) userLinkElement.href = `https://github.com/${entry.author}`
       userLinkElement.textContent = entry.author
 
+      const entryRowDescriptionElement = document.createElement('div')
+      if (entry.description) {
+        entryRowDescriptionElement.classList.add('changelog-entry-row', 'changelog-entry-row-message')
+        const messagesElement = document.createElement('div')
+        messagesElement.classList.add('changelog-entry-descriptions')
+        entry.description.forEach(m => {
+          const messageElement = document.createElement('p')
+          messageElement.innerHTML = processMessage(m)
+          messagesElement.appendChild(messageElement)
+        })
+        entryRowDescriptionElement.appendChild(messagesElement)
+      }
+
       titleIconElement.appendChild(iconElement)
       userElement.appendChild(byElement)
       userElement.appendChild(userLinkElement)
@@ -208,6 +223,7 @@ const replaceChangelogEntries = () => {
       entryRowElement.appendChild(messageElement)
       entryRowElement.appendChild(userElement)
       entryElement.appendChild(entryRowElement)
+      if (entry.description) entryElement.appendChild(entryRowDescriptionElement)
       entriesElement.appendChild(entryElement)
     })
     container.appendChild(categoryNameElement)
@@ -219,8 +235,12 @@ const replaceChangelogEntries = () => {
 const ISSUE_REGEX = /([a-zA-Z0-9\-_]+?)#(\d+)/g
 const ISSUE_EXPANDED_REGEX = /([a-zA-Z0-9\-_]+?)\/([a-zA-Z0-9\-_]+?)#(\d+)/g
 const MD_URL_REGEX = /\[(.*?)\]\((.*?)\)/g
+const MD_BOLD_REGEX = /\*\*(.*?)\*\*/g
+const MD_ITALIC_REGEX = /[*_](.*?)[*_]/g
+const MD_UNDERLINE_REGEX = /__(.*?)__/g
 
 const processMessage = message => {
+  // the order is *VERY* important!
   if (ISSUE_REGEX.test(message)) {
     if (ISSUE_EXPANDED_REGEX.test(message)) {
       message = message.replace(ISSUE_EXPANDED_REGEX, '<a href="https://github.com/$1/$2/pull/$3">$&</a>')
@@ -230,6 +250,15 @@ const processMessage = message => {
   }
   if (MD_URL_REGEX.test(message)) {
     message = message.replace(MD_URL_REGEX, '<a href="$2">$1</a>')
+  }
+  if (MD_BOLD_REGEX.test(message)) {
+    message = message.replace(MD_BOLD_REGEX, '<b>$1</b>')
+  }
+  if (MD_ITALIC_REGEX.test(message)) {
+    message = message.replace(MD_ITALIC_REGEX, '<i>$1</i>')
+  }
+  if (MD_UNDERLINE_REGEX.test(message)) {
+    message = message.replace(MD_UNDERLINE_REGEX, '<u>$1</u>')
   }
   return message
 }

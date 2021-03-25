@@ -7,18 +7,21 @@
         {
           "category": "Code Quality",
           "message": "Migrate to TypeScript (ezpp#95)",
-          "author": "acrylic-style"
+          "author": "acrylic-style",
+          "description": ["For better typing. If you've encountered issues, please create a new issue."]
         },
         {
           "category": "Code Quality",
           "message": "Add .gitattributes (ezpp#97)",
-          "author": "acrylic-style"
+          "author": "acrylic-style",
+          "description": ["This change was required for developers who uses Windows to prevent [this mess (click to view image)](https://user-images.githubusercontent.com/19150229/112325059-b5827000-8cf6-11eb-9c08-d22d613707fd.png), because Windows uses CRLF instead of LF"]
         },
         {
           "category": "Gamemode",
           "message": "Full taiko support (<b>only for non-conversion maps</b>) (ezpp#93)",
           "author": "acrylic-style",
-          "major": true
+          "major": true,
+          "description": ["Conversion maps are not ready!!!!!"]
         }
       ]
     },
@@ -44,7 +47,8 @@
           "category": "User Interface",
           "message": "Add setting to use original song metadata (ezpp#82)",
           "author": "acrylic-style",
-          "major": true
+          "major": true,
+          "description": ["For example, \"Harumachi Clover\" (romanized title) will become \"春待ちクローバー\" (unicode title)"]
         },
         {
           "category": "Translation",
@@ -70,7 +74,8 @@
           "category": "Gamemode",
           "message": "Add Taiko support (ezpp#70)",
           "author": "acrylic-style",
-          "major": true
+          "major": true,
+          "description": ["EZ, HT, HR, DT are not supported for now, as star rating calculator is not implemented yet."]
         },
         {
           "category": "Translation",
