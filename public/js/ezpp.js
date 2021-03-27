@@ -240,30 +240,56 @@ const MD_ITALIC_REGEX = /[*_](.*?)[*_]/g
 const MD_UNDERLINE_REGEX = /__(.*?)__/g
 const MD_STRIKETHROUGH_REGEX = /~~(.*?)~~/g
 
+/**
+ * @param {string} message
+ */
 const processMessage = message => {
-  // the order is *VERY* important!
-  if (ISSUE_REGEX.test(message)) {
-    if (ISSUE_EXPANDED_REGEX.test(message)) {
-      message = message.replace(ISSUE_EXPANDED_REGEX, '<a href="https://github.com/$1/$2/pull/$3">$&</a>')
+  let result = ''
+  let pending = ''
+  for (let i = 0; i < message.length; i++) {
+    const char = message.charAt(i)
+    pending += char
+    if (/\d/.test(char)) continue
+    // the order is *VERY* important!
+    if (ISSUE_REGEX.test(pending)) {
+      if (ISSUE_EXPANDED_REGEX.test(pending)) {
+        pending = pending.replace(ISSUE_EXPANDED_REGEX, '<a href="https://github.com/$1/$2/pull/$3">$&</a>')
+        result += pending
+        pending = ''
+      } else {
+        pending = pending.replace(ISSUE_REGEX, '<a href="https://github.com/oamaok/$1/pull/$2">$&</a>')
+        result += pending
+        pending = ''
+      }
     }
-    message = message.replace(ISSUE_REGEX, '<a href="https://github.com/oamaok/$1/pull/$2">$&</a>')
+    if (MD_URL_REGEX.test(pending)) {
+      pending = pending.replace(MD_URL_REGEX, '<a href="$2">$1</a>')
+      result += pending
+      pending = ''
+    }
+    if (MD_BOLD_REGEX.test(pending)) {
+      pending = pending.replace(MD_BOLD_REGEX, '<b>$1</b>')
+      result += pending
+      pending = ''
+    }
+    if (MD_ITALIC_REGEX.test(pending)) {
+      pending = pending.replace(MD_ITALIC_REGEX, '<i>$1</i>')
+      result += pending
+      pending = ''
+    }
+    if (MD_UNDERLINE_REGEX.test(pending)) {
+      pending = pending.replace(MD_UNDERLINE_REGEX, '<u>$1</u>')
+      result += pending
+      pending = ''
+    }
+    if (MD_STRIKETHROUGH_REGEX.test(pending)) {
+      pending = pending.replace(MD_STRIKETHROUGH_REGEX, '<strike>$1</strike>')
+      result += pending
+      pending = ''
+    }
   }
-  if (MD_URL_REGEX.test(message)) {
-    message = message.replace(MD_URL_REGEX, '<a href="$2">$1</a>')
-  }
-  if (MD_BOLD_REGEX.test(message)) {
-    message = message.replace(MD_BOLD_REGEX, '<b>$1</b>')
-  }
-  if (MD_ITALIC_REGEX.test(message)) {
-    message = message.replace(MD_ITALIC_REGEX, '<i>$1</i>')
-  }
-  if (MD_UNDERLINE_REGEX.test(message)) {
-    message = message.replace(MD_UNDERLINE_REGEX, '<u>$1</u>')
-  }
-  if (MD_STRIKETHROUGH_REGEX.test(message)) {
-    message = message.replace(MD_STRIKETHROUGH_REGEX, '<strike>$1</strike>')
-  }
-  return message
+  result += pending
+  return result
 }
 
 /**
