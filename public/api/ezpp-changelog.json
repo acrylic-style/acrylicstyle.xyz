@@ -18,10 +18,21 @@
         },
         {
           "category": "Gamemode",
-          "message": "Full taiko support (<b>only for non-conversion maps</b>) (ezpp#93)",
+          "message": "Full taiko support (ezpp#93, ezpp#110)",
           "author": "acrylic-style",
           "major": true,
-          "description": ["Conversion maps are not ready!!!!!"]
+          "description": ["osu!taiko is now fully supported! (including conversion maps!)"]
+        },
+        {
+          "category": "Gamemode",
+          "message": "Partial code for ctb (ezpp#110)",
+          "author": "acrylic-style",
+          "description": ["This is not an initial support or anything, it's just preparation for ctb support in the future."]
+        },
+        {
+          "category": "User Interface",
+          "message": "Fix original metadata display if unicode title/artist is missing (workaround for ppy/osu-web#7380, ezpp#107) (ezpp#108)",
+          "author": "oamaok"
         }
       ]
     },

@@ -232,21 +232,21 @@ const replaceChangelogEntries = () => {
   })
 }
 
-const ISSUE_REGEX = /([a-zA-Z0-9\-_]+?)#(\d+)/g
+const ISSUE_REGEX = /(?!\/)([a-zA-Z0-9\-_]+?)#(\d+)/g
 const ISSUE_EXPANDED_REGEX = /([a-zA-Z0-9\-_]+?)\/([a-zA-Z0-9\-_]+?)#(\d+)/g
 const MD_URL_REGEX = /\[(.*?)\]\((.*?)\)/g
 const MD_BOLD_REGEX = /\*\*(.*?)\*\*/g
 const MD_ITALIC_REGEX = /[*_](.*?)[*_]/g
 const MD_UNDERLINE_REGEX = /__(.*?)__/g
+const MD_STRIKETHROUGH_REGEX = /~~(.*?)~~/g
 
 const processMessage = message => {
   // the order is *VERY* important!
   if (ISSUE_REGEX.test(message)) {
     if (ISSUE_EXPANDED_REGEX.test(message)) {
       message = message.replace(ISSUE_EXPANDED_REGEX, '<a href="https://github.com/$1/$2/pull/$3">$&</a>')
-    } else {
-      message = message.replace(ISSUE_REGEX, '<a href="https://github.com/oamaok/$1/pull/$2">$&</a>')
     }
+    message = message.replace(ISSUE_REGEX, '<a href="https://github.com/oamaok/$1/pull/$2">$&</a>')
   }
   if (MD_URL_REGEX.test(message)) {
     message = message.replace(MD_URL_REGEX, '<a href="$2">$1</a>')
@@ -259,6 +259,9 @@ const processMessage = message => {
   }
   if (MD_UNDERLINE_REGEX.test(message)) {
     message = message.replace(MD_UNDERLINE_REGEX, '<u>$1</u>')
+  }
+  if (MD_STRIKETHROUGH_REGEX.test(message)) {
+    message = message.replace(MD_STRIKETHROUGH_REGEX, '<strike>$1</strike>')
   }
   return message
 }
