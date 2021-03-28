@@ -5,10 +5,22 @@
       "pre": true,
       "entries": [
         {
+          "category": "Important Notice",
+          "message": "'Unreleased' changes are **not final** and may be changed at anytime.",
+          "author": "acrylic-style",
+          "major": true
+        },
+        {
+          "category": "Important Notice",
+          "message": "These changes are usually available on the main branch or open PRs.",
+          "author": "acrylic-style"
+        },
+        {
           "category": "Code Quality",
           "message": "Migrate to TypeScript (ezpp#95)",
           "author": "acrylic-style",
-          "description": ["For better typing. If you've encountered issues, please create a new issue."]
+          "description": ["For better typing. If you've encountered issues, please create a new issue."],
+          "major": true
         },
         {
           "category": "Code Quality",
@@ -17,16 +29,26 @@
           "description": ["This change was required for developers who uses Windows to prevent [this mess (click to view image)](https://user-images.githubusercontent.com/19150229/112325059-b5827000-8cf6-11eb-9c08-d22d613707fd.png), because Windows uses CRLF instead of LF"]
         },
         {
+          "category": "Code Quality",
+          "message": "ezpp#99: Create a type for beatmap data (ezpp#110)",
+          "author": "acrylic-style"
+        },
+        {
           "category": "Gamemode",
-          "message": "Full taiko star rating/pp calculation (aka Full taiko support) (ezpp#93, ezpp#110)",
+          "message": "ezpp#88: Full taiko star rating/pp calculation (aka Full taiko support) (ezpp#93, ezpp#110)",
           "author": "acrylic-style",
           "major": true,
           "description": ["osu!taiko is now fully supported! (including conversion maps!)"]
         },
         {
           "category": "User Interface",
-          "message": "Fix original metadata display if unicode title/artist is missing (workaround for ppy/osu-web#7380, ezpp#107) (ezpp#108)",
+          "message": "ezpp#107: Fix original metadata display if unicode title/artist is missing (fix for ppy/osu-web#7380) (ezpp#108)",
           "author": "oamaok"
+        },
+        {
+          "category": "User Interface",
+          "message": "ezpp#77: Fix incorrect star difficulty on converted maps (ezpp#110)",
+          "author": "acrylic-style"
         }
       ]
     },
