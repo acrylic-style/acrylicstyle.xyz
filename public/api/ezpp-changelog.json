@@ -52,6 +52,11 @@
         },
         {
           "category": "Library",
+          "message": "Library (libezpp) is not used yet in ezpp! chrome/firefox extension.",
+          "author": "acrylic-style"
+        },
+        {
+          "category": "Library",
           "message": "Initial API Draft (libezpp#2)",
           "author": "oamaok"
         },
