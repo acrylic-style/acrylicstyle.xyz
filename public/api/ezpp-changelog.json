@@ -18,16 +18,10 @@
         },
         {
           "category": "Gamemode",
-          "message": "Full taiko support (ezpp#93, ezpp#110)",
+          "message": "Full taiko star rating/pp calculation (aka Full taiko support) (ezpp#93, ezpp#110)",
           "author": "acrylic-style",
           "major": true,
           "description": ["osu!taiko is now fully supported! (including conversion maps!)"]
-        },
-        {
-          "category": "Gamemode",
-          "message": "Partial code for ctb (ezpp#110)",
-          "author": "acrylic-style",
-          "description": ["This is not an initial support or anything, it's just preparation for ctb support in the future."]
         },
         {
           "category": "User Interface",
