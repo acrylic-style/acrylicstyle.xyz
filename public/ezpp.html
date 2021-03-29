@@ -25,6 +25,7 @@
           color: rgba(220, 182, 255, 0.8);
           text-decoration: none;
           outline-style: none;
+          transition: color 80ms linear;
         }
         
         a:hover,
@@ -97,6 +98,95 @@
             padding-left: 70px;
             padding-right: 70px;
           }
+
+          .groups {
+            display: flex;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+            flex: none;
+            width: calc(100% - 40px);
+            max-width: 1000px;
+          }
+        }
+
+        .groups {
+          padding: 20px 5px;
+          background-color: #24222A;
+        }
+
+        .groups-container {
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 45px;
+          padding-right: 45px;
+          width: 100%;
+        }
+
+        .groups-item {
+          text-decoration: none;
+          color: #fff;
+          padding: 5px;
+          width: 100px;
+          display: block;
+          will-change: opacity;
+        }
+
+        .groups-featured {
+          width: 150px;
+        }
+
+        .groups-bar {
+          display: block;
+          margin-bottom: 5px;
+          width: 100%;
+          height: 4px;
+          border-radius: 400px;
+          will-change: transform;
+        }
+
+        .groups-row, .groups-item:hover .groups-row {
+          opacity: 1;
+        }
+
+        .groups-row, .groups-container:hover .groups-row {
+          opacity: 0.5;
+        }
+
+        .groups-bar, .groups-container:hover .groups-bar {
+          transform: scaleY(.5);
+          opacity: .5;
+        }
+
+        .groups-container:hover .groups-row {
+          opacity: .5;
+        }
+
+        .groups-container:hover .groups-item-active .groups-bar, .groups-item-active .groups-bar, .groups-item:hover .groups-bar {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+
+        .groups-item-active .groups-row {
+          opacity: 1;
+        }
+        
+        .groups-container:hover .groups-item:hover .groups-row {
+          opacity: 1;
+        }
+
+        .groups-row {
+          margin: 0;
+        }
+
+        .groups-row-name {
+          font-size: 12px;
+          font-weight: 700;
+        }
+
+        .groups-row-version {
+          font-size: 16px;
+          font-weight: 300;
         }
 
         .build-version {
@@ -105,6 +195,14 @@
           display: flex;
           justify-content: center;
           font-size: 24px;
+        }
+
+        .build-date {
+          font-size: 14px;
+          font-weight: 300;
+          color: rgba(220, 182, 255, 0.8);
+          text-align: center;
+          padding-top: 5px;
         }
 
         .build-version-link {
@@ -185,6 +283,10 @@
           margin: 0 0 10px;
         }
       </style>
+      <div class="groups">
+        <div class="groups-container" id="groups-container">
+        </div>
+      </div>
       <div class="builds">
         <div class="builds-group">
           <div class="builds-item" id="builds-item">
@@ -200,12 +302,13 @@
                 <i class="fas fa-chevron-right"></i>
               </span>
             </div>
+            <div class="build-date" id="build-date"></div>
           </div>
           <div class="page-nav" id="page-nav">
             <div class="nav-item nav-item-left" id="nav-item-left"></div>
             <div class="nav-item nav-item-right" id="nav-item-right"></div>
           </div>
-          <p>SVG icons provided by Font Awesome. <a href="https://fontawesome.com/license">Licence</a></p>
+          <p style="font-size: 15px">SVG icons provided by Font Awesome. <a href="https://fontawesome.com/license">Licence</a></p>
         </div>
       </div>
     </main>

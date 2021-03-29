@@ -1,4 +1,5 @@
 const url = '/api/ezpp-changelog.json'
+const buildDateElement = document.getElementById('build-date')
 const buildVersionElement = document.getElementById('build-version')
 const buildCurrentVersionLinkElement = document.getElementById('build-current-version-link')
 const buildCurrentVersionLabelElement = document.getElementById('build-current-version-label')
@@ -10,31 +11,55 @@ const iconMinusElement = document.getElementById('fa-minus')
 const iconCheckElement = document.getElementById('fa-check')
 const iconChevronRightElement = document.getElementById('fa-chevron-right')
 const iconChevronLeftElement = document.getElementById('fa-chevron-left')
+const groupsContainerElement = document.getElementById('groups-container')
 
-/**
- * @param {ChangelogData} data 
- */
-const getOrLatest = data => {
+const getSelectedGroup = () => {
+  const featured = data.groups.find(d => d.featured) || data.groups[0]
+  const href = location.href.split('#')
+  if (href.length < 2) return featured
+  const group = href[1].split('/')[0]
+  return data.groups.find(d => d.name === group) || featured
+}
+
+const getOrLatest = () => {
   const href = location.href.split('#')
   let index = 0
-  const fallback = { ...data.entries.find((e, i) => {
+  const featured = data.groups.find(d => d.featured) || data.groups[0]
+  if (!featured) throw new Error('No group defined')
+  let nonPre = featured.entries.find((e, i) => {
     if (typeof e.version === 'undefined') console.error('Version not defined for ' + e)
     index = i
     return !e.pre
-  }), index }
+  })
+  if (!nonPre) {
+    index = 0
+    nonPre = featured.entries[0]
+  }
+  const fallback = { ...nonPre, index }
   if (href.length < 2) return fallback
-  const version = href[1]
+  const hash = href[1].split('/')
+  const version = hash.length === 1 ? hash[0] : hash[1]
   index = 0
-  const result = data.entries.find((e, i) => {
+  let result = getSelectedGroup().entries.find((e, i) => {
     index = i
     return e.version === version
   })
+  if (!result) {
+    index = 0
+    result = getSelectedGroup().entries.find((e, i) => {
+      index = i
+      return !e.pre
+    })
+    if (!result) result = getSelectedGroup().entries[0]
+  }
   return result ? { ...result, index } : fallback
 }
 
 /**
  * @typedef {{
  *     version: string
+ *     date?: string | number
+ *     pre: boolean
  *     entries: [
  *       {
  *         category: string
@@ -45,13 +70,22 @@ const getOrLatest = data => {
  *         description?: Array<string>
  *       }
  *     ]
- *     pre: boolean
  *   }
  * } ChangelogEntry
  */
 
 /**
- * @typedef {{ entries: Array<ChangelogEntry> }} ChangelogData
+ * @typedef {{
+ *   display_name: string
+ *   name: string
+ *   color?: string
+ *   featured: boolean
+ *   entries: Array<ChangelogEntry>
+ * }} GroupData
+ */
+
+/**
+ * @typedef {{ groups: Array<GroupData> }} ChangelogData
  */
 
 /**
@@ -74,28 +108,102 @@ const process = data_ => {
   } else {
     if (!data) throw new Error('data not defined')
   }
-  current = getOrLatest(data)
-  console.log('Current version:', { ...current, previous: data.entries[current.index + 1], next: data.entries[current.index - 1] })
+  current = getOrLatest()
+  console.log('Current version:', { ...current, previous: getSelectedGroup().entries[current.index + 1], next: getSelectedGroup().entries[current.index - 1] })
+  updateGroups()
   replaceBuildVersionElements()
   replaceChangelogEntries()
 }
 
+const updateGroups = () => {
+  groupsContainerElement.innerHTML = ''
+  data.groups.forEach(group => {
+    if (!group.name || !group.display_name || !group.entries) {
+      console.warn('One or more of required properties are not defined:', group)
+      return
+    }
+    const aGroupElement = document.createElement('a')
+    aGroupElement.href = `#${group.name}`
+    aGroupElement.classList.add('groups-item')
+    if (group.name === getSelectedGroup().name) aGroupElement.classList.add('groups-item-active')
+    if (group.featured) aGroupElement.classList.add('groups-featured')
+
+    const barElement = document.createElement('div')
+    barElement.classList.add('groups-bar')
+    barElement.style.backgroundColor = group.color || '#fff'
+    const nameElement = document.createElement('p')
+    nameElement.classList.add('groups-row', 'groups-row-name')
+    nameElement.textContent = group.display_name
+    const versionElement = document.createElement('p')
+    versionElement.classList.add('groups-row', 'groups-row-version')
+    versionElement.textContent = (group.entries.find((e, i) => {
+      index = i
+      return !e.pre
+    }) || group.entries[0]).version
+
+    aGroupElement.appendChild(barElement)
+    aGroupElement.appendChild(nameElement)
+    aGroupElement.appendChild(versionElement)
+    groupsContainerElement.appendChild(aGroupElement)
+  })
+}
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+]
+
 const replaceBuildVersionElements = () => {
-  buildCurrentVersionLinkElement.href = `#${current.version}`
+  const group = getSelectedGroup()
+  buildCurrentVersionLinkElement.href = `#${group.name}/${current.version}`
+  buildCurrentVersionLinkElement.children.item(0).textContent = group.display_name
   buildCurrentVersionLabelElement.classList.toggle('changelog-entry-major', current.pre || false)
-  buildCurrentVersionLabelElement.textContent = current.version
+  buildCurrentVersionLabelElement.textContent = `${current.version}`
+  if (current.date) {
+    const date = new Date(current.date)
+    if (!isNaN(date.getTime())) {
+      buildDateElement.textContent = `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`
+      buildDateElement.title = date.toLocaleString(undefined, { timeZoneName: 'short' })
+    } else {
+      buildDateElement.textContent = current.date
+      buildDateElement.title = current.date
+    }
+  } else {
+    buildDateElement.textContent = ''
+    buildDateElement.title = ''
+  }
+  if (current.pre) {
+    buildCurrentVersionLabelElement.title = 'This version is pre-release'
+  } else {
+    buildCurrentVersionLabelElement.title = ''
+  }
+  if (!current.pre) {
+    buildCurrentVersionLabelElement.style.color = group.color || '#fff'
+  } else {
+    buildCurrentVersionLabelElement.style.color = null
+  }
   { // left
     const old = buildVersionElement.children.item(0)
-    const element = createBuildVersionLinkElement(data.entries[current.index + 1], false)
+    const element = createBuildVersionLinkElement(group.entries[current.index + 1], false)
     buildVersionElement.replaceChild(element, old)
   }
   { // right
     const old = buildVersionElement.children.item(2)
-    const element = createBuildVersionLinkElement(data.entries[current.index - 1], true)
+    const element = createBuildVersionLinkElement(group.entries[current.index - 1], true)
     buildVersionElement.replaceChild(element, old)
   }
   { // nav, left
-    const entry = data.entries[current.index + 1]
+    const entry = group.entries[current.index + 1]
     if (entry) {
       let aElement
       if (navItemLeftElement.children.length === 0) {
@@ -104,7 +212,7 @@ const replaceBuildVersionElements = () => {
       } else {
         aElement = navItemLeftElement.children.item(0)
       }
-      aElement.href = `#${entry.version}`
+      aElement.href = `#${group.name}/${entry.version}`
       if (aElement.children.length === 0) {
         const span = document.createElement('span')
         span.classList.add('nav-item-label')
@@ -121,7 +229,7 @@ const replaceBuildVersionElements = () => {
     }
   }
   { // nav, right
-    const entry = data.entries[current.index - 1]
+    const entry = group.entries[current.index - 1]
     if (entry) {
       let aElement
       if (navItemRightElement.children.length === 0) {
@@ -130,7 +238,7 @@ const replaceBuildVersionElements = () => {
       } else {
         aElement = navItemRightElement.children.item(0)
       }
-      aElement.href = `#${entry.version}`
+      aElement.href = `#${group.name}/${entry.version}`
       if (aElement.children.length === 0) {
         const span = document.createElement('span')
         span.classList.add('nav-item-label')
@@ -150,8 +258,8 @@ const replaceBuildVersionElements = () => {
 
 const replaceChangelogEntries = () => {
   const length = buildsItemElement.children.length
-  for (let i = 1; i < length; i++) {
-    const element = buildsItemElement.children.item(1)
+  for (let i = 2; i < length; i++) {
+    const element = buildsItemElement.children.item(2)
     buildsItemElement.removeChild(element)
   }
   current.entries.map(e => e.category).filter((v, i, a) => a.indexOf(v) === i).forEach(categoryName => {
@@ -306,7 +414,7 @@ const createBuildVersionLinkElement = (entry, right) => {
   } else {
     const a = document.createElement('a')
     a.classList.add('build-version-link')
-    a.href = `#${entry.version}`
+    a.href = `#${getSelectedGroup().name}/${entry.version}`
     a.appendChild(side)
     return a
   }

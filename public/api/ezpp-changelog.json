@@ -1,969 +1,1110 @@
 {
-  "entries": [
+  "groups": [
     {
-      "version": "Unreleased",
-      "pre": true,
+      "display_name": "ezpp!",
+      "name": "ezpp",
+      "featured": true,
+      "color": "#2ea",
       "entries": [
         {
-          "category": "Important Notice",
-          "message": "'Unreleased' changes are **not final** and may be changed at anytime.",
-          "author": "acrylic-style",
-          "major": true
+          "version": "Unreleased",
+          "pre": true,
+          "entries": [
+            {
+              "category": "Important Notice",
+              "message": "'Unreleased' changes are **not final** and may be changed at anytime.",
+              "author": "acrylic-style",
+              "major": true
+            },
+            {
+              "category": "Important Notice",
+              "message": "These changes are usually available on the main branch or open PRs.",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "Code Quality",
+              "message": "Migrate to TypeScript (ezpp#95)",
+              "author": "acrylic-style",
+              "description": ["For better typing. If you've encountered issues, please create a new issue."],
+              "major": true
+            },
+            {
+              "category": "Code Quality",
+              "message": "Add .gitattributes (ezpp#97)",
+              "author": "acrylic-style",
+              "description": ["This change was required for developers who uses Windows to prevent [this mess (click to view image)](https://user-images.githubusercontent.com/19150229/112325059-b5827000-8cf6-11eb-9c08-d22d613707fd.png), because Windows uses CRLF instead of LF"]
+            },
+            {
+              "category": "Code Quality",
+              "message": "Create a type for beatmap data (Issue: ezpp#99, PR: ezpp#110)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "Gamemode",
+              "message": "Full taiko star rating/pp calculation (aka Full taiko support) (Issue: ezpp#88, PRs: ezpp#93, ezpp#110)",
+              "author": "acrylic-style",
+              "major": true,
+              "description": ["osu!taiko is now fully supported! (including conversion maps!)"]
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix original metadata display if unicode title/artist is missing (Issues: ppy/osu-web#7380, ezpp#107, PR: ezpp#108)",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix incorrect star difficulty on converted maps (Issue: ezpp#77, PR: ezpp#110)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "Library",
+              "message": "Library (libezpp) is not used yet in ezpp! chrome/firefox extension.",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "Library",
+              "message": "Initial API Draft (libezpp#2)",
+              "author": "oamaok"
+            },
+            {
+              "category": "Library",
+              "message": "Initial release (libezpp#4)",
+              "author": "oamaok"
+            }
+          ]
         },
         {
-          "category": "Important Notice",
-          "message": "These changes are usually available on the main branch or open PRs.",
-          "author": "acrylic-style"
+          "version": "v1.10.2",
+          "date": "2021-03-23T21:10:39Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Fix a bug which caused all the text to disappear in some cases (ezpp#92)",
+              "author": "oamaok"
+            }
+          ]
         },
         {
-          "category": "Code Quality",
-          "message": "Migrate to TypeScript (ezpp#95)",
-          "author": "acrylic-style",
-          "description": ["For better typing. If you've encountered issues, please create a new issue."],
-          "major": true
+          "version": "v1.10.1",
+          "date": "2021-03-23T16:57:21Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Fix AR calculations (ezpp#76)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "User Interface",
+              "message": "Add setting to use original song metadata (ezpp#82)",
+              "author": "acrylic-style",
+              "major": true,
+              "description": ["For example, \"Harumachi Clover\" (romanized title) will become \"春待ちクローバー\" (unicode title)"]
+            },
+            {
+              "category": "Translation",
+              "message": "Fix Swedish translation file encoding (ezpp#78)",
+              "author": "Walavouchey"
+            },
+            {
+              "category": "Code Quality",
+              "message": "Refactor settings system (ezpp#83)",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Remove local changelog (ezpp#80)",
+              "author": "oamaok"
+            }
+          ]
         },
         {
-          "category": "Code Quality",
-          "message": "Add .gitattributes (ezpp#97)",
-          "author": "acrylic-style",
-          "description": ["This change was required for developers who uses Windows to prevent [this mess (click to view image)](https://user-images.githubusercontent.com/19150229/112325059-b5827000-8cf6-11eb-9c08-d22d613707fd.png), because Windows uses CRLF instead of LF"]
+          "version": "v1.10.0",
+          "date": "2021-03-22T13:10:52Z",
+          "entries": [
+            {
+              "category": "Gamemode",
+              "message": "Add Taiko support (ezpp#70)",
+              "author": "acrylic-style",
+              "major": true,
+              "description": ["EZ, HT, HR, DT are not supported for now, as star rating calculator is not implemented yet."]
+            },
+            {
+              "category": "Translation",
+              "message": "Add Swedish translations (ezpp#69)",
+              "author": "Walavouchey"
+            },
+            {
+              "category": "Code Quality",
+              "message": "Calculator code refactoring ([a6907be](https://github.com/oamaok/ezpp/commit/a6907befd762b519b98c62564aebff5eac8659c0))",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Minor stylistic improvements (ezpp#73)",
+              "author": "oamaok"
+            }
+          ]
         },
         {
-          "category": "Code Quality",
-          "message": "Create a type for beatmap data (Issue: ezpp#99, PR: ezpp#110)",
-          "author": "acrylic-style"
+          "version": "v1.9.0",
+          "date": "2021-03-20T14:26:05Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Display AR (ezpp#50)",
+              "author": "acrylic-style",
+              "type": "add",
+              "major": true
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix BPM display for HT (ezpp#60)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Hungarian translations (ezpp#59)",
+              "author": "Tudi20"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Turkish translations (ezpp#58)",
+              "author": "EmirhaN998"
+            },
+            {
+              "category": "pp Calculation",
+              "message": "Update pp calculation package [ojsama](https://github.com/Francesco149/ojsama) (ezpp#57)",
+              "author": "hesch"
+            }
+          ]
         },
         {
-          "category": "Gamemode",
-          "message": "Full taiko star rating/pp calculation (aka Full taiko support) (Issue: ezpp#88, PRs: ezpp#93, ezpp#110)",
-          "author": "acrylic-style",
-          "major": true,
-          "description": ["osu!taiko is now fully supported! (including conversion maps!)"]
+          "version": "v1.8.6",
+          "date": "2020-08-22T08:33:10Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Display BPM",
+              "author": "oamaok",
+              "type": "add",
+              "major": true
+            },
+            {
+              "category": "Misc",
+              "message": "Remove analytics for Firefox",
+              "author": "oamaok"
+            }
+          ]
         },
         {
-          "category": "User Interface",
-          "message": "Fix original metadata display if unicode title/artist is missing (Issues: ppy/osu-web#7380, ezpp#107, PR: ezpp#108)",
-          "author": "oamaok"
+          "version": "v1.8.5",
+          "date": "2020-01-08T14:10:08Z",
+          "entries": [
+            {
+              "category": "Code Quality",
+              "message": "Update <a href=\"https://github.com/Francesco149/ojsama\">ojsama</a> to v1.2.5",
+              "author": "oamaok"
+            }
+          ]
         },
         {
-          "category": "User Interface",
-          "message": "Fix incorrect star difficulty on converted maps (Issue: ezpp#77, PR: ezpp#110)",
-          "author": "acrylic-style"
+          "version": "v1.8.4",
+          "date": "2019-05-23T08:50:33Z",
+          "entries": [
+            {
+              "category": "Translation",
+              "message": "Update Japanese translations (ezpp#43)",
+              "author": "sjcl"
+            },
+            {
+              "category": "Translation",
+              "message": "Update Spanish translations (ezpp#44)",
+              "author": "loarca"
+            },
+            {
+              "category": "Translation",
+              "message": "Update Finnish translations",
+              "author": "oamaok"
+            }
+          ]
         },
         {
-          "category": "Library",
-          "message": "Library (libezpp) is not used yet in ezpp! chrome/firefox extension.",
-          "author": "acrylic-style"
+          "version": "v1.8.3",
+          "date": "2019-04-18T07:07:46Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Add darkmode",
+              "author": "oamaok",
+              "major": true
+            },
+            {
+              "category": "Translation",
+              "message": "Add Korean translations (ezpp#42)",
+              "author": "pine5508"
+            }
+          ]
         },
         {
-          "category": "Library",
-          "message": "Initial API Draft (libezpp#2)",
-          "author": "oamaok"
+          "version": "v1.8.2",
+          "date": "2019-02-15T12:38:23Z",
+          "entries": [
+            {
+              "category": "pp Calculation",
+              "message": "Even more accurate pp calculations",
+              "author": "oamaok"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Simplified Chinese translations (ezpp#41)",
+              "author": "TsukiPoi"
+            }
+          ]
         },
         {
-          "category": "Library",
-          "message": "Initial release (libezpp#4)",
-          "author": "oamaok"
+          "version": "v1.8.1",
+          "date": "2019-02-10T01:08:09Z",
+          "entries": [
+            {
+              "category": "pp Calculation",
+              "message": "Update pp calculations to accurately match the pp rebalance",
+              "author": "oamaok"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Brazilian Portuguese translations (ezpp#40)",
+              "author": "ekisu"
+            }
+          ]
+        },
+        {
+          "version": "v1.8.0",
+          "date": "2019-02-08T11:47:12Z",
+          "entries": [
+            {
+              "category": "pp Calculation",
+              "message": "Update pp calculations to match the rebalance (almost)",
+              "author": "oamaok"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Traditional Chinese translations (ezpp#36)",
+              "author": "tomokarin"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Italian translations (ezpp#38)",
+              "author": "Frank1907"
+            }
+          ]
+        },
+        {
+          "version": "v1.7.3",
+          "date": "2018-11-15T09:15:22Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Fix addon not working on the old site while not logged in",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Add error reporting to content script",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.7.2",
+          "date": "2018-11-12T08:40:01Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Hide extension after changing to a non-beatmap page on new site",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Use Exo as font only for Vietnamase",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.7.1",
+          "date": "2018-11-08T06:58:52Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Use Exo as font for Vietnamase support",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Bundle images and fonts as assets",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.7.0",
+          "date": "2018-11-07T11:32:45Z",
+          "entries": [
+            {
+              "category": "Translation",
+              "message": "Add Japanese translation (ezpp#33)",
+              "author": "sjcl"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Vietnamase translation (ezpp#31)",
+              "author": "natsukagami"
+            },
+            {
+              "category": "Code Quality",
+              "message": "Rework project structure",
+              "author": "oamaok"
+            },
+            {
+              "category": "Code Quality",
+              "message": "Rework page information resolving",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.6.0",
+          "date": "2018-10-09T10:29:15Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Display calculation results immediately",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Remove input limitations",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Load beatmap and beatmap background in parallel for faster boot",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Minor stylistic enhancements",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.12",
+          "date": "2018-10-07T08:16:25Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Fix font size on some Windows machines",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Display current version inside the header",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.11",
+          "date": "2018-10-04T14:20:53Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Fix star rating display logic",
+              "author": "oamaok"
+            },
+            {
+              "category": "Reliability",
+              "message": "Fix notification system",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.10",
+          "date": "2018-09-27T09:19:30Z",
+          "entries": [
+            {
+              "category": "Translation",
+              "message": "Add Polish translation (ezpp#28)",
+              "author": "Desconocidosmh"
+            },
+            {
+              "category": "User Interface",
+              "message": "Display star difficulty",
+              "author": "oamaok",
+              "type": "add",
+              "major": true
+            },
+            {
+              "category": "User Interface",
+              "message": "Minor content align fixes",
+              "author": "oamaok"
+            },
+            {
+              "category": "Code Quality",
+              "message": "Improve translation system",
+              "author": "oamaok"
+            },
+            {
+              "category": "Code Quality",
+              "message": "Upgrade bundling system",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.9",
+          "date": "2018-09-14T08:03:51Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Remove errneous analytics data object",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Format analytics numerals properly",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.8",
+          "date": "2018-09-11T08:53:37Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Improve calculation analytics format",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Minor code style improvements",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.7",
+          "date": "2018-08-30T06:08:45Z",
+          "entries": [
+            {
+              "category": "Translation",
+              "message": "Add Romanian translation (ezpp#26)",
+              "author": "NoireHime"
+            },
+            {
+              "category": "Translation",
+              "message": "Add French translation (ezpp#27)",
+              "author": "xZoomy"
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix error display",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Sort languages by language code",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.6",
+          "date": "2018-08-14T10:19:42Z",
+          "entries": [
+            {
+              "category": "Translation",
+              "message": "Add Russian translation (ezpp#25)",
+              "author": "pazzaru"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Slovakian translation (ezpp#23)",
+              "author": "Thymue"
+            },
+            {
+              "category": "Reliability",
+              "message": "Update [ojsama](https://github.com/Francesco149/ojsama) to fix rare calculation error",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.5",
+          "date": "2018-07-19T12:50:56Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Fix settings panel opening under main panel",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.4",
+          "date": "2018-07-19T11:34:35Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Harden the extension against network errors",
+              "author": "oamaok"
+            },
+            {
+              "category": "Reliability",
+              "message": "Fix bug affecting some Vietnamese users (Cốc Cốc browser)",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Send calculation settings in error reports",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Minor stylistic changes",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.3",
+          "date": "2018-07-18T10:36:42Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Allow 'Delete' key in fields",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Add Github link",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Send current browser and beatmap URL in error reports",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.2",
+          "date": "2018-07-04T08:17:14Z",
+          "entries": [
+            {
+              "category": "Code Quality",
+              "message": "Improve translation system",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Improved error reporting",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Minor analytics enhancements",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.1",
+          "date": "2018-05-18T20:30:49Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Fix update notification popping up every time",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.5.0",
+          "date": "2018-05-18T12:10:38Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Add settings menu",
+              "author": "oamaok",
+              "major": true
+            },
+            {
+              "category": "Translation",
+              "message": "Add Spanish translation (ezpp#21)",
+              "author": "DJNeonNight"
+            },
+            {
+              "category": "Translation",
+              "message": "Add translations (fi, en, de)",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Add analytics toggle",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.8",
+          "date": "2018-05-16T07:48:22Z",
+          "entries": [
+            {
+              "category": "pp Calculation",
+              "message": "Update PP calculations to match the HD rebalance",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Add comma asa a decimal separator",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Minor stylistic changes",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.7",
+          "date": "2018-04-04T09:24:29Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Fix URL parsing, again :(",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.6",
+          "date": "2018-04-04T08:28:11Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Fix URL parsing error causing failures with the new osu! website",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.5",
+          "date": "2018-04-04T07:22:24Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Send errors to Google Analytics for easier debugging",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.4",
+          "date": "2018-03-28T08:11:35Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Try to fix error related to new osu! website rollout",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.3",
+          "date": "2018-02-23T12:08:30Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Analytics fix",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.2",
+          "date": "2018-02-23T09:36:39Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Allow navigation with arrow keys in numeric inputs",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Improve analytics",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.1",
+          "date": "2018-02-21T14:14:46Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Fix HalfTime mod",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.4.0",
+          "date": "2018-02-21T08:01:39Z",
+          "entries": [
+            {
+              "category": "pp Calculation",
+              "message": "Use <a href=\"https://github.com/Francesco149/ojsama\">ojsama</a> for pp calculations",
+              "author": "oamaok",
+              "major": true
+            }
+          ]
+        },
+        {
+          "version": "v1.3.2",
+          "date": "2017-12-19T12:51:20Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Add keyboard shortcuts for mods",
+              "author": "oamaok, Artikash",
+              "major": true
+            },
+            {
+              "category": "Code Quality",
+              "message": "Minor refactoring",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.3.1",
+          "date": "2017-09-08T10:05:32Z",
+          "entries": [
+            {
+              "category": "Code Quality",
+              "message": "Minor code cleaning",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Use local fonts and images",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Remove analytics from the Firefox version",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.3.0",
+          "date": "2017-08-18T10:59:46Z",
+          "entries": [
+            {
+              "category": "Code Quality",
+              "message": "Separation of styles from script files",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Firefox update \\o/",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Build process improvements",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.15",
+          "date": "2017-08-15T16:37:33Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Fix proper error messages not being displayed",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.14",
+          "date": "2017-08-15T12:26:35Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Add cleaner error display",
+              "author": "oamaok"
+            },
+            {
+              "category": "Reliability",
+              "message": "Fix site version detection",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Minor stylistic changes",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.13",
+          "date": "2017-08-15T07:13:36Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Fix errors caused by changes in osu.ppy.sh HTML generation",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.12",
+          "date": "2016-12-20T17:33:44Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Add analytics",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.11",
+          "date": "2016-12-20T16:52:20Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Fix the extension not working on <a href=\"http://new.ppy.sh\">http://new.ppy.sh</a> beatmapset pages",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.10",
+          "date": "2016-08-22T12:58:08Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Fix CS buff not capping at 5",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.9",
+          "date": "2016-07-06T18:59:01Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Fix not being able to select mods",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.8",
+          "date": "2016-07-06T18:35:16Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Limit accuracy, combo, and miss field values",
+              "author": "oamaok"
+            },
+            {
+              "category": "Code Quality",
+              "message": "Add missing charset meta tag",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Add local changelog",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Remove JS minification for Firefox builds",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.7",
+          "date": "2016-06-12T21:48:11Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Add Firefox support",
+              "author": "oamaok",
+              "major": true
+            }
+          ]
+        },
+        {
+          "version": "v1.2.6",
+          "date": "2016-06-12T16:42:06Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Add proper error handling",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.5",
+          "date": "2016-06-12T13:13:46Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Add missing version number from notification (whoops!)",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.4",
+          "date": "2016-06-12T12:44:17Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Add check for conflicting mods and disable the counterpart automatically",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Add version update notifications bar",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Add version change deteciton",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.3",
+          "date": "2016-06-11T21:29:34Z",
+          "entries": [
+            {
+              "category": "Reliability",
+              "message": "Fix bug where miss count would default to -1 resulting in erroneous PP calculations",
+              "author": "oamaok"
+            },
+            {
+              "category": "Reliability",
+              "message": "Fix bug where on some beatmaps certain accuracies would cause the extension to crash",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.2",
+          "date": "2016-06-11T20:08:47Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Add support for old beatmaps missing the game mode field, default to standard mode",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.1",
+          "date": "2016-06-10T14:57:58Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Add better icon, multiple resolutions",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.2.0",
+          "date": "2016-06-10T13:45:01Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Add support for new.ppy.sh",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.1.0",
+          "date": "2016-06-10T08:37:40Z",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Remove 'Calculate'-button, result is now calculated automatically",
+              "author": "oamaok"
+            }
+          ]
+        },
+        {
+          "version": "v1.0.0",
+          "date": "2016-06-09T18:25:53Z",
+          "entries": [
+            {
+              "category": "History Maker",
+              "message": "Boom!",
+              "author": "oamaok"
+            }
+          ]
         }
       ]
     },
     {
-      "version": "v1.10.2",
+      "display_name": "libezpp",
+      "name": "libezpp",
+      "featured": false,
+      "color": "#86e",
       "entries": [
         {
-          "category": "User Interface",
-          "message": "Fix a bug which caused all the text to disappear in some cases (ezpp#92)",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.10.1",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Fix AR calculations (ezpp#76)",
-          "author": "acrylic-style"
-        },
-        {
-          "category": "User Interface",
-          "message": "Add setting to use original song metadata (ezpp#82)",
-          "author": "acrylic-style",
-          "major": true,
-          "description": ["For example, \"Harumachi Clover\" (romanized title) will become \"春待ちクローバー\" (unicode title)"]
-        },
-        {
-          "category": "Translation",
-          "message": "Fix Swedish translation file encoding (ezpp#78)",
-          "author": "Walavouchey"
-        },
-        {
-          "category": "Code Quality",
-          "message": "Refactor settings system (ezpp#83)",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Remove local changelog (ezpp#80)",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.10.0",
-      "entries": [
-        {
-          "category": "Gamemode",
-          "message": "Add Taiko support (ezpp#70)",
-          "author": "acrylic-style",
-          "major": true,
-          "description": ["EZ, HT, HR, DT are not supported for now, as star rating calculator is not implemented yet."]
-        },
-        {
-          "category": "Translation",
-          "message": "Add Swedish translations (ezpp#69)",
-          "author": "Walavouchey"
-        },
-        {
-          "category": "Code Quality",
-          "message": "Calculator code refactoring ([a6907be](https://github.com/oamaok/ezpp/commit/a6907befd762b519b98c62564aebff5eac8659c0))",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Minor stylistic improvements (ezpp#73)",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.9.0",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Display AR (ezpp#50)",
-          "author": "acrylic-style",
-          "type": "add",
-          "major": true
-        },
-        {
-          "category": "User Interface",
-          "message": "Fix BPM display for HT (ezpp#60)",
-          "author": "acrylic-style"
-        },
-        {
-          "category": "Translation",
-          "message": "Add Hungarian translations (ezpp#59)",
-          "author": "Tudi20"
-        },
-        {
-          "category": "Translation",
-          "message": "Add Turkish translations (ezpp#58)",
-          "author": "EmirhaN998"
-        },
-        {
-          "category": "pp Calculation",
-          "message": "Update pp calculation package [ojsama](https://github.com/Francesco149/ojsama) (ezpp#57)",
-          "author": "hesch"
-        }
-      ]
-    },
-    {
-      "version": "v1.8.6",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Display BPM",
-          "author": "oamaok",
-          "type": "add",
-          "major": true
-        },
-        {
-          "category": "Misc",
-          "message": "Remove analytics for Firefox",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.8.5",
-      "entries": [
-        {
-          "category": "Code Quality",
-          "message": "Update <a href=\"https://github.com/Francesco149/ojsama\">ojsama</a> to v1.2.5",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.8.4",
-      "entries": [
-        {
-          "category": "Translation",
-          "message": "Update Japanese translations (ezpp#43)",
-          "author": "sjcl"
-        },
-        {
-          "category": "Translation",
-          "message": "Update Spanish translations (ezpp#44)",
-          "author": "loarca"
-        },
-        {
-          "category": "Translation",
-          "message": "Update Finnish translations",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.8.3",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Add darkmode",
-          "author": "oamaok",
-          "major": true
-        },
-        {
-          "category": "Translation",
-          "message": "Add Korean translations (ezpp#42)",
-          "author": "pine5508"
-        }
-      ]
-    },
-    {
-      "version": "v1.8.2",
-      "entries": [
-        {
-          "category": "pp Calculation",
-          "message": "Even more accurate pp calculations",
-          "author": "oamaok"
-        },
-        {
-          "category": "Translation",
-          "message": "Add Simplified Chinese translations (ezpp#41)",
-          "author": "TsukiPoi"
-        }
-      ]
-    },
-    {
-      "version": "v1.8.1",
-      "entries": [
-        {
-          "category": "pp Calculation",
-          "message": "Update pp calculations to accurately match the pp rebalance",
-          "author": "oamaok"
-        },
-        {
-          "category": "Translation",
-          "message": "Add Brazilian Portuguese translations (ezpp#40)",
-          "author": "ekisu"
-        }
-      ]
-    },
-    {
-      "version": "v1.8.0",
-      "entries": [
-        {
-          "category": "pp Calculation",
-          "message": "Update pp calculations to match the rebalance (almost)",
-          "author": "oamaok"
-        },
-        {
-          "category": "Translation",
-          "message": "Add Traditional Chinese translations (ezpp#36)",
-          "author": "tomokarin"
-        },
-        {
-          "category": "Translation",
-          "message": "Add Italian translations (ezpp#38)",
-          "author": "Frank1907"
-        }
-      ]
-    },
-    {
-      "version": "v1.7.3",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Fix addon not working on the old site while not logged in",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Add error reporting to content script",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.7.2",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Hide extension after changing to a non-beatmap page on new site",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Use Exo as font only for Vietnamase",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.7.1",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Use Exo as font for Vietnamase support",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Bundle images and fonts as assets",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.7.0",
-      "entries": [
-        {
-          "category": "Translation",
-          "message": "Add Japanese translation (ezpp#33)",
-          "author": "sjcl"
-        },
-        {
-          "category": "Translation",
-          "message": "Add Vietnamase translation (ezpp#31)",
-          "author": "natsukagami"
-        },
-        {
-          "category": "Code Quality",
-          "message": "Rework project structure",
-          "author": "oamaok"
-        },
-        {
-          "category": "Code Quality",
-          "message": "Rework page information resolving",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.6.0",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Display calculation results immediately",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Remove input limitations",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Load beatmap and beatmap background in parallel for faster boot",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Minor stylistic enhancements",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.12",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Fix font size on some Windows machines",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Display current version inside the header",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.11",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Fix star rating display logic",
-          "author": "oamaok"
-        },
-        {
-          "category": "Reliability",
-          "message": "Fix notification system",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.10",
-      "entries": [
-        {
-          "category": "Translation",
-          "message": "Add Polish translation (ezpp#28)",
-          "author": "Desconocidosmh"
-        },
-        {
-          "category": "User Interface",
-          "message": "Display star difficulty",
-          "author": "oamaok",
-          "type": "add",
-          "major": true
-        },
-        {
-          "category": "User Interface",
-          "message": "Minor content align fixes",
-          "author": "oamaok"
-        },
-        {
-          "category": "Code Quality",
-          "message": "Improve translation system",
-          "author": "oamaok"
-        },
-        {
-          "category": "Code Quality",
-          "message": "Upgrade bundling system",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.9",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Remove errneous analytics data object",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Format analytics numerals properly",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.8",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Improve calculation analytics format",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Minor code style improvements",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.7",
-      "entries": [
-        {
-          "category": "Translation",
-          "message": "Add Romanian translation (ezpp#26)",
-          "author": "NoireHime"
-        },
-        {
-          "category": "Translation",
-          "message": "Add French translation (ezpp#27)",
-          "author": "xZoomy"
-        },
-        {
-          "category": "User Interface",
-          "message": "Fix error display",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Sort languages by language code",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.6",
-      "entries": [
-        {
-          "category": "Translation",
-          "message": "Add Russian translation (ezpp#25)",
-          "author": "pazzaru"
-        },
-        {
-          "category": "Translation",
-          "message": "Add Slovakian translation (ezpp#23)",
-          "author": "Thymue"
-        },
-        {
-          "category": "Reliability",
-          "message": "Update [ojsama](https://github.com/Francesco149/ojsama) to fix rare calculation error",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.5",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Fix settings panel opening under main panel",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.4",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Harden the extension against network errors",
-          "author": "oamaok"
-        },
-        {
-          "category": "Reliability",
-          "message": "Fix bug affecting some Vietnamese users (Cốc Cốc browser)",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Send calculation settings in error reports",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Minor stylistic changes",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.3",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Allow 'Delete' key in fields",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Add Github link",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Send current browser and beatmap URL in error reports",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.2",
-      "entries": [
-        {
-          "category": "Code Quality",
-          "message": "Improve translation system",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Improved error reporting",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Minor analytics enhancements",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.1",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Fix update notification popping up every time",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.5.0",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Add settings menu",
-          "author": "oamaok",
-          "major": true
-        },
-        {
-          "category": "Translation",
-          "message": "Add Spanish translation (ezpp#21)",
-          "author": "DJNeonNight"
-        },
-        {
-          "category": "Translation",
-          "message": "Add translations (fi, en, de)",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Add analytics toggle",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.8",
-      "entries": [
-        {
-          "category": "pp Calculation",
-          "message": "Update PP calculations to match the HD rebalance",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Add comma asa a decimal separator",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Minor stylistic changes",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.7",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Fix URL parsing, again :(",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.6",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Fix URL parsing error causing failures with the new osu! website",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.5",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Send errors to Google Analytics for easier debugging",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.4",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Try to fix error related to new osu! website rollout",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.3",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Analytics fix",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.2",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Allow navigation with arrow keys in numeric inputs",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Improve analytics",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.1",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Fix HalfTime mod",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.4.0",
-      "entries": [
-        {
-          "category": "pp Calculation",
-          "message": "Use <a href=\"https://github.com/Francesco149/ojsama\">ojsama</a> for pp calculations",
-          "author": "oamaok",
-          "major": true
-        }
-      ]
-    },
-    {
-      "version": "v1.3.2",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Add keyboard shortcuts for mods",
-          "author": "oamaok, Artikash",
-          "major": true
-        },
-        {
-          "category": "Code Quality",
-          "message": "Minor refactoring",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.3.1",
-      "entries": [
-        {
-          "category": "Code Quality",
-          "message": "Minor code cleaning",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Use local fonts and images",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Remove analytics from the Firefox version",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.3.0",
-      "entries": [
-        {
-          "category": "Code Quality",
-          "message": "Separation of styles from script files",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Firefox update \\o/",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Build process improvements",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.15",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Fix proper error messages not being displayed",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.14",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Add cleaner error display",
-          "author": "oamaok"
-        },
-        {
-          "category": "Reliability",
-          "message": "Fix site version detection",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Minor stylistic changes",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.13",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Fix errors caused by changes in osu.ppy.sh HTML generation",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.12",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Add analytics",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.11",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Fix the extension not working on <a href=\"http://new.ppy.sh\">http://new.ppy.sh</a> beatmapset pages",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.10",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Fix CS buff not capping at 5",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.9",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Fix not being able to select mods",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.8",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Limit accuracy, combo, and miss field values",
-          "author": "oamaok"
-        },
-        {
-          "category": "Code Quality",
-          "message": "Add missing charset meta tag",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Add local changelog",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Remove JS minification for Firefox builds",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.7",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Add Firefox support",
-          "author": "oamaok",
-          "major": true
-        }
-      ]
-    },
-    {
-      "version": "v1.2.6",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Add proper error handling",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.5",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Add missing version number from notification (whoops!)",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.4",
-      "entries": [
-        {
-          "category": "User Interface",
-          "message": "Add check for conflicting mods and disable the counterpart automatically",
-          "author": "oamaok"
-        },
-        {
-          "category": "User Interface",
-          "message": "Add version update notifications bar",
-          "author": "oamaok"
-        },
-        {
-          "category": "Misc",
-          "message": "Add version change deteciton",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.3",
-      "entries": [
-        {
-          "category": "Reliability",
-          "message": "Fix bug where miss count would default to -1 resulting in erroneous PP calculations",
-          "author": "oamaok"
-        },
-        {
-          "category": "Reliability",
-          "message": "Fix bug where on some beatmaps certain accuracies would cause the extension to crash",
-          "author": "oamaok"
-        }
-      ]
-    },
-    {
-      "version": "v1.2.2",
-      "entries": [
-        {
-          "category": "Misc",
-          "message": "Add support for old beatmaps missing the game mode field, default to standard mode",
-          "author": "oamaok"
+          "version": "1.0.0",
+          "date": "2021-03-26T20:37:45Z",
+          "entries": [
+            {
+              "category": "Misc",
+              "message": "Initial release to reserve the name in the npm registry. Includes a basic beatmap parser.",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Initial commit, add API draft",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Add initial version of beatmap parser (libezpp#3)",
+              "author": "oamaok"
+            },
+            {
+              "category": "Misc",
+              "message": "Initial release (libezpp#4)",
+              "author": "oamaok"
+            }
+          ]
         }
       ]
     }
