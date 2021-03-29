@@ -55,21 +55,6 @@
               "category": "User Interface",
               "message": "Fix incorrect star difficulty on converted maps (Issue: ezpp#77, PR: ezpp#110)",
               "author": "acrylic-style"
-            },
-            {
-              "category": "Library",
-              "message": "Library (libezpp) is not used yet in ezpp! chrome/firefox extension.",
-              "author": "acrylic-style"
-            },
-            {
-              "category": "Library",
-              "message": "Initial API Draft (libezpp#2)",
-              "author": "oamaok"
-            },
-            {
-              "category": "Library",
-              "message": "Initial release (libezpp#4)",
-              "author": "oamaok"
             }
           ]
         },
