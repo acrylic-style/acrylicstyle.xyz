@@ -358,7 +358,7 @@ const processMessage = message => {
   for (let i = 0; i < message.length; i++) {
     const char = message.charAt(i)
     pending += char
-    if (/\d/.test(char)) continue
+    if (/\d/.test(char) && i !== (message.length - 1)) continue
     // the order is *VERY* important!
     if (ISSUE_REGEX.test(pending)) {
       if (ISSUE_EXPANDED_REGEX.test(pending)) {
