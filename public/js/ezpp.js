@@ -1,4 +1,5 @@
 const url = '/api/ezpp-changelog.json'
+const defaultUser = 'oamaok'
 const buildDateElement = document.getElementById('build-date')
 const buildVersionElement = document.getElementById('build-version')
 const buildCurrentVersionLinkElement = document.getElementById('build-current-version-link')
@@ -365,7 +366,7 @@ const processMessage = message => {
         result += pending
         pending = ''
       } else {
-        pending = pending.replace(ISSUE_REGEX, '<a href="https://github.com/oamaok/$1/pull/$2">$&</a>')
+        pending = pending.replace(ISSUE_REGEX, '<a href="https://github.com/' + defaultUser + '/$1/pull/$2">$&</a>')
         result += pending
         pending = ''
       }
