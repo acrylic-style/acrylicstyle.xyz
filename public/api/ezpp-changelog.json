@@ -18,7 +18,7 @@
             },
             {
               "category": "Important Notice",
-              "message": "These changes are usually available on the main branch or open PRs.",
+              "message": "These changes are usually available on the main branch.",
               "author": "acrylic-style"
             },
             {
@@ -55,6 +55,40 @@
               "category": "User Interface",
               "message": "Fix incorrect star difficulty on converted maps (Issue: ezpp#77, PR: ezpp#110)",
               "author": "acrylic-style"
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix AR calculation with HT+HR (with simpler code) (ezpp#128)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix some part of an artist is missing on some beatmap (ezpp#121)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "User Interface",
+              "message": "Collapsible pp details design (ezpp#119)",
+              "author": "acrylic-style",
+              "major": true
+            },
+            {
+              "category": "User Interface",
+              "message": "Change header color depending on the star rating (ezpp#118)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "Reliability",
+              "message": "Fix throwing error on discussion page (ezpp#117)",
+              "author": "acrylic-style",
+              "description": "Extension popup will be hidden (you cannot open) on discussion page."
+            },
+            {
+              "category": "User Interface",
+              "message": "Make it work on score details page",
+              "author": "acrylic-style",
+              "major": true,
+              "description": "With auto-fills."
             }
           ]
         },
