@@ -1136,14 +1136,14 @@
               "category": "Reliability",
               "message": "Fix throwing error on discussion page (ezpp#117)",
               "author": "acrylic-style",
-              "description": "Extension popup will be hidden (you cannot open) on discussion page."
+              "description": ["Extension popup will be hidden (you cannot open) on discussion page."]
             },
             {
               "category": "User Interface",
               "message": "Make it work on score details page",
               "author": "acrylic-style",
               "major": true,
-              "description": "With auto-fills."
+              "description": ["With auto-fills."]
             },
             {
               "category": "Translation",
