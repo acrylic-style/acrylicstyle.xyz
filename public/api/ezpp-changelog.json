@@ -11,17 +11,6 @@
           "pre": true,
           "entries": [
             {
-              "category": "Important Notice",
-              "message": "'Unreleased' changes are **not final** and may be changed at anytime.",
-              "author": "acrylic-style",
-              "major": true
-            },
-            {
-              "category": "Important Notice",
-              "message": "These changes are usually available on the main branch.",
-              "author": "acrylic-style"
-            },
-            {
               "category": "Code Quality",
               "message": "Migrate to TypeScript (ezpp#95)",
               "author": "acrylic-style",
@@ -57,38 +46,24 @@
               "author": "acrylic-style"
             },
             {
-              "category": "User Interface",
-              "message": "Fix AR calculation with HT+HR (with simpler code) (ezpp#128)",
-              "author": "acrylic-style"
+              "category": "Translation",
+              "message": "Add Bulgarian Translation (ezpp#124)",
+              "author": "Spooghetti420"
             },
             {
-              "category": "User Interface",
-              "message": "Fix some part of an artist is missing on some beatmap (ezpp#121)",
-              "author": "acrylic-style"
+              "category": "Translation",
+              "message": "Update German Translation (ezpp#125)",
+              "author": "Spooghetti420"
             },
             {
-              "category": "User Interface",
-              "message": "Collapsible pp details design (ezpp#119)",
-              "author": "acrylic-style",
-              "major": true
+              "category": "Translation",
+              "message": "Update Chinese Translation (ezpp#126)",
+              "author": "Kotoki1337"
             },
             {
-              "category": "User Interface",
-              "message": "Change header color depending on the star rating (ezpp#118)",
-              "author": "acrylic-style"
-            },
-            {
-              "category": "Reliability",
-              "message": "Fix throwing error on discussion page (ezpp#117)",
-              "author": "acrylic-style",
-              "description": "Extension popup will be hidden (you cannot open) on discussion page."
-            },
-            {
-              "category": "User Interface",
-              "message": "Make it work on score details page",
-              "author": "acrylic-style",
-              "major": true,
-              "description": "With auto-fills."
+              "category": "Translation",
+              "message": "Add Croatian Translation (ezpp#131)",
+              "author": "Marki2019"
             }
           ]
         },
@@ -1088,6 +1063,107 @@
               "category": "History Maker",
               "message": "Boom!",
               "author": "oamaok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "display_name": "ezpp! experimental",
+      "name": "ezpp_experimental",
+      "color": "#fc2",
+      "entries": [
+        {
+          "version": "1.11.0",
+          "entries": [
+            {
+              "category": "Code Quality",
+              "message": "Migrate to TypeScript (ezpp#95)",
+              "author": "acrylic-style",
+              "description": ["For better typing. If you've encountered issues, please create a new issue."],
+              "major": true
+            },
+            {
+              "category": "Code Quality",
+              "message": "Add .gitattributes (ezpp#97)",
+              "author": "acrylic-style",
+              "description": ["This change was required for developers who uses Windows to prevent [this mess (click to view image)](https://user-images.githubusercontent.com/19150229/112325059-b5827000-8cf6-11eb-9c08-d22d613707fd.png), because Windows uses CRLF instead of LF"]
+            },
+            {
+              "category": "Code Quality",
+              "message": "Create a type for beatmap data (Issue: ezpp#99, PR: ezpp#110)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "Gamemode",
+              "message": "Full taiko star rating/pp calculation (aka Full taiko support) (Issue: ezpp#88, PRs: ezpp#93, ezpp#110)",
+              "author": "acrylic-style",
+              "major": true,
+              "description": ["osu!taiko is now fully supported! (including conversion maps!)"]
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix original metadata display if unicode title/artist is missing (Issues: ppy/osu-web#7380, ezpp#107, PR: ezpp#108)",
+              "author": "oamaok"
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix incorrect star difficulty on converted maps (Issue: ezpp#77, PR: ezpp#110)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix AR calculation with HT+HR (with simpler code) (ezpp#128)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "User Interface",
+              "message": "Fix some part of an artist is missing on some beatmap (ezpp#121)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "User Interface",
+              "message": "Collapsible pp details design (ezpp#119)",
+              "author": "acrylic-style",
+              "major": true
+            },
+            {
+              "category": "User Interface",
+              "message": "Change header color depending on the star rating (ezpp#118)",
+              "author": "acrylic-style"
+            },
+            {
+              "category": "Reliability",
+              "message": "Fix throwing error on discussion page (ezpp#117)",
+              "author": "acrylic-style",
+              "description": "Extension popup will be hidden (you cannot open) on discussion page."
+            },
+            {
+              "category": "User Interface",
+              "message": "Make it work on score details page",
+              "author": "acrylic-style",
+              "major": true,
+              "description": "With auto-fills."
+            },
+            {
+              "category": "Translation",
+              "message": "Add Bulgarian Translation (ezpp#124)",
+              "author": "Spooghetti420"
+            },
+            {
+              "category": "Translation",
+              "message": "Update German Translation (ezpp#125)",
+              "author": "Spooghetti420"
+            },
+            {
+              "category": "Translation",
+              "message": "Update Chinese Translation (ezpp#126)",
+              "author": "Kotoki1337"
+            },
+            {
+              "category": "Translation",
+              "message": "Add Croatian Translation (ezpp#131)",
+              "author": "Marki2019"
             }
           ]
         }
