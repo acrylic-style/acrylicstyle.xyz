@@ -1071,8 +1071,19 @@
     {
       "display_name": "ezpp! experimental",
       "name": "ezpp_experimental",
-      "color": "#fc2",
+      "color": "#fb5",
       "entries": [
+        {
+          "version": "1.11.1",
+          "pre": true,
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Apply DoubleTime when Nightcore is present on score page",
+              "author": "acrylic-style"
+            }
+          ]
+        },
         {
           "version": "1.11.0",
           "entries": [
