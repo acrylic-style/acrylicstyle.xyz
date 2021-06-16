@@ -1074,6 +1074,16 @@
       "color": "#fb5",
       "entries": [
         {
+          "version": "1.11.2",
+          "entries": [
+            {
+              "category": "User Interface",
+              "message": "Fixed displaying 'NaNpp' in some cases (ezpp#135)",
+              "author": "stinger222"
+            }
+          ]
+        },
+        {
           "version": "1.11.1",
           "entries": [
             {
