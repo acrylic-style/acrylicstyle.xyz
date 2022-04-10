@@ -51,6 +51,7 @@ function openUrl(url) {
   opened.opener = null;
 }
 
+registerUrl('blueberry', 'https://github.com/BlueberryMC');
 registerUrl('osu', 'https://osu.ppy.sh/users/13293262');
 registerUrl('github', 'https://github.com/acrylic-style');
 registerUrl('twitter', 'https://twitter.com/PerfectBoatJP');
