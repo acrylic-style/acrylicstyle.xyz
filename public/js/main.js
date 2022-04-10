@@ -41,7 +41,11 @@ if (false) {
 }
 function registerUrl(id, url) {
   try {
-    document.getElementById(id).onclick = () => openUrl(url);
+    const el = document.getElementById(id)
+    el.onclick = (e) => {
+      e.preventDefault();
+      openUrl(el.href || url);
+    }
   } catch (e) {
     console.warn(`Could not register URL(ID: ${id}, URL: ${url}): ${e.stack || e}`);
   }
@@ -51,6 +55,7 @@ function openUrl(url) {
   opened.opener = null;
 }
 
+// fallbacks
 registerUrl('blueberry', 'https://github.com/BlueberryMC');
 registerUrl('osu', 'https://osu.ppy.sh/users/13293262');
 registerUrl('github', 'https://github.com/acrylic-style');
