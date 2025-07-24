@@ -1,0 +1,3 @@
+[submodule "react-snowfall"]
+	path = react-snowfall
+	url = https://github.com/acrylic-style/react-snowfall
