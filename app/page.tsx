@@ -29,7 +29,7 @@ export default function Home() {
           {/* dummy element */}
           <div></div>
           {/* main contents */}
-          <div className="flex items-center gap-16">
+          <div className="flex items-center gap-16 max-sm:gap-4">
             <Image alt="avatar.webp" src="/avatar.webp" width={200} height={200} className="rounded-full w-[200px] max-sm:w-[150px]" />
             <div className="flex flex-col gap-2">
               <h2 className="text-6xl max-sm:text-3xl">ぱーぼー</h2>
