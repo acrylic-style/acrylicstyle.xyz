@@ -36,7 +36,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="max-w-[40%] m-auto">
+          <div className="container mx-auto">
             <AppHeader />
             {children}
             <AppFooter />
