@@ -14,7 +14,7 @@ export default function Home() {
   }
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center h-full w-full">
         {/* background image */}
         <div
@@ -32,7 +32,7 @@ export default function Home() {
           <div className="flex items-center gap-16 max-sm:gap-4">
             <Image alt="avatar.webp" src="/avatar.webp" width={200} height={200} className="rounded-full w-[200px] max-sm:w-[150px]" />
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl max-sm:text-3xl">ぱーぼー</h2>
+              <h2 className="font-sans text-6xl max-sm:text-3xl">ぱーぼー</h2>
               <h3 className="text-2xl max-sm:text-xl">a.k.a. PerfectBoat</h3>
             </div>
           </div>
