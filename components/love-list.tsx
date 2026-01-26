@@ -28,6 +28,7 @@ export default function LoveList() {
       name: "☕ Java",
       links: [
         {name: "BlueberryMC/NativeUtil", href: "https://github.com/BlueberryMC/NativeUtil"},
+        {name: "BlueberryMC/Blueberry", href: "https://github.com/BlueberryMC/Blueberry/tree/dev/1.20.6"},
         {name: "AzisabaNetwork/Kuvel (一部)", href: "https://github.com/AzisabaNetwork/Kuvel"},
         {name: "AzisabaNetwork/LifeCore", href: "https://github.com/AzisabaNetwork/LifeCore"},
         {name: "他にもAzisabaNetwork内のいろいろ", href: "https://github.com/AzisabaNetwork"},
@@ -35,7 +36,10 @@ export default function LoveList() {
     },
     {
       name: "⚙ Rust",
-      description: "まだ公開できるものがないです... :(",
+      description: "まだ公開できるものがひとつしかないです... :(",
+      links: [
+        {name: "BlueberryMC/ws-tcp-proxy", href: "https://github.com/BlueberryMC/ws-tcp-proxy"},
+      ],
     },
     {
       name: "TypeScript",
@@ -43,13 +47,13 @@ export default function LoveList() {
       links: [
         {name: "azisaba/discord-chat-sync", href: "https://github.com/azisaba/discord-chat-sync"},
         {name: "acrylic-style/train-location-and-visitors-server", href: "https://github.com/acrylic-style/train-location-and-visitors-server"},
-      ]
+      ],
     },
     {
       name: "✌ Vue",
       links: [
         {name: "azisaba/renewal-azisaba.net", href: "https://github.com/azisaba/renewal-azisaba.net"},
-      ]
+      ],
     },
   ]
 
